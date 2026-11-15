@@ -103,8 +103,10 @@ dọn. Bạn gõ `/housekeeping` (Codex: `$housekeeping`) trong thư mục của
    tính là dọn được. Thứ chưa gộp được báo lại và giữ nguyên.
 3. Agent đưa kế hoạch chia theo phần, rồi hỏi bạn từng phần. Bạn đồng ý phần
    nào thì dọn phần đó.
-4. Mục còn vướng (file chưa commit, PR đang mở, phiên Claude chưa archive)
-   được hỏi từng bước một cho tới khi dọn được, hoặc bạn bảo giữ.
+4. Mục còn vướng (file chưa commit, PR đang mở) được hỏi từng bước một cho tới
+   khi dọn được, hoặc bạn bảo giữ. Phiên chat của worktree/nhánh cục bộ được dọn
+   thì tự archive luôn, không hỏi riêng (trừ phiên đang chạy sweep và phiên
+   đang làm dở).
 5. Không bao giờ xoá volume, prune Docker hay đụng vào worktree chính. Mỗi lần
    chạy đều hỏi lại từ đầu.
 

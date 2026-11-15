@@ -7,9 +7,12 @@ Owner-requested addition, designed with the owner before writing:
   folder's repository only. Read-only plan first, grouped into parts; the owner
   approves part by part. Cleanable only when every commit is in origin/main
   (ancestry, or a merged PR whose head is the branch tip) and it is not the
-  main worktree. Other obstacles (uncommitted files, ignored data, an open PR,
-  a host session not archived) are resolved with the owner one step at a time.
-  No memory of earlier answers between sweeps.
+  main worktree. Other obstacles (uncommitted files, ignored data, an open PR)
+  are resolved with the owner one step at a time. The host session that owns a
+  cleaned worktree or local branch is archived with it, without a separate
+  question (not the running session, not one mid-turn). Branches on origin stay
+  their own part B, never deleted as a side effect. No memory of earlier answers
+  between sweeps.
 - release-housekeeping SKILL.md: mode and reference row. dev-router.md points
   to it. Optional adapters: /housekeeping (Claude Code), $housekeeping (Codex).
 - Clicking through screens happens only for a change with a user interface,
