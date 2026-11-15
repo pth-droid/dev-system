@@ -1,3 +1,31 @@
+# Version 4.5 - 2026-11-15
+
+Owner-requested edits from a review of 4.4, made by hand:
+
+- Who may run on a default (dev-guardrails SKILL.md card 4, daily-workflow.md
+  14): only a low-risk detail inside approved scope or a fallback approved in
+  advance. Money, access, data integrity, product policy, outside effects and
+  material scope stay "recommended, waiting for approval" even when the code is
+  reversible; only independent work continues.
+- Owner feedback (verification.md): a missing approved criterion is NEEDS_WORK,
+  never deferred because the candidate is "no worse than today". Table of four
+  feedback kinds.
+- Baseline not green (planning-handoff.md, tdd.md): three cases instead of an
+  automatic stop; a test already failing on the assigned bug is the RED.
+- QUICK_FIX hand-off (dev-router.md 3c): same standard as 3a/3b, the minimum
+  the new session must be told, statuses READY_FOR_REVIEW / BLOCKED /
+  NEEDS_OWNER_CHECK, and the lead reads the diff and evidence instead of
+  "re-runs nothing"; tiny edits may stay with the lead.
+- Kept worktree (cleanup.md): switch it to the next branch before deleting
+  the old one, or keep the old branch on purpose.
+- Keep-warm (daily-workflow.md 7a): saving the cache never keeps an unsuitable
+  model or effort, and never outranks a stop.
+- tools/regen_manifest.py: `--check` verifies without writing; regeneration
+  refuses to write on a missing file or broken link. INSTALL-HANDOFF.md step 1
+  says a failed check stops the install.
+
+Six scenarios were run; see VALIDATION.md.
+
 # Version 4.4 - 2026-11-15
 
 Owner-requested edits, made by hand, after measuring where the pilot's tokens

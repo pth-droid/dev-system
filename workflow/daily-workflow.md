@@ -251,10 +251,13 @@ An override lasts for the session. A bare "stop", "pause" or "nghỉ" is not a
 keep-warm command; ask when unsure. Say in one line every time the state
 changes and why ("keep-warm on until 23:00", "keep-warm off: builder finished").
 
-Keep the cache valid, or a wake-up buys nothing: do not change the model or the
-effort level in the middle of a lead session (on the Claude API either one
-starts the cache over; switch at a session boundary), and keep the wake-up
-prompt to one short line.
+Changing the model or the effort level in the middle of a lead session starts
+the cache over (on the Claude API either one does), so do not change them for
+no reason, and keep the wake-up prompt to one short line. Saving the cache is
+never a reason to keep an unsuitable model or effort: when the work needs more
+capability, quality comes first; switch now, or at a session boundary if the
+change can wait without harming the result. Keep-warm also never outranks a
+stop instruction from the owner.
 
 ## 8. Main performs the default post-development review
 
@@ -405,9 +408,18 @@ where applicable, housekeeping complete) is reported as DONE once, in one line
 with its PR and what was verified, then left out of later reports.
 
 Open the report with the decisions waiting for the owner. Each has an id, the
-date it was asked and a default. For a reversible decision main continues on
-the more cautious default and marks it "running on the default, can be
-changed"; only irreversible or outward-facing decisions block.
+date it was asked and a recommendation. Whether main may continue on its own
+default depends on who owns the choice, not on whether the code can be undone:
+
+| The open decision is | Main does |
+| --- | --- |
+| A low-risk implementation detail inside the approved scope | Continues on the more cautious default, marked "running on the default, can be changed" |
+| Covered by a fallback the owner approved in advance | Continues on that fallback and names the approval |
+| About money, access, data integrity, product policy, an outside effect or material scope | Marks it "recommended, waiting for approval" and continues only the work that does not depend on it |
+
+Reverting code does not revert its effects: a rounding rule, a refund
+condition or a permission already applied to real records stays applied.
+Silence is never consent to the third row.
 
 ## Files used by this workflow
 

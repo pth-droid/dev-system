@@ -31,6 +31,8 @@ private tables and call order.
 
 For each behavior:
 1. Pick the acceptance criterion and one scenario. Write its focused test first.
+   When an existing test already fails on exactly the assigned bug, that test
+   is the RED: record its failing line and go to step 3 without writing a copy.
 2. Run that test and preserve the expected failure. Confirm failure is caused by
    the missing/wrong behavior, not missing credentials, a broken runner, or a typo.
    A valid unimplemented public interface can fail; a random compile error is

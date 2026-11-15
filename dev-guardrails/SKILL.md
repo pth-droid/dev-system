@@ -16,8 +16,13 @@ owner in their language. Keep routine technical choices with the agent.
 2. Measure before deciding; a threshold or formula is chosen from data, not
    from an assumption.
 3. A sentence about current behavior carries its source, or says "not checked".
-4. One decision card per consequential owner question; every open question has
-   a default the work continues on, marked "default, can be changed".
+4. One decision card per consequential owner question, with a recommendation.
+   The agent continues on its own default only for a low-risk implementation
+   detail inside the approved scope, or a fallback the owner approved in
+   advance, marked "default, can be changed". A decision touching money,
+   access, data integrity, product policy, an outside effect or material scope
+   stays "recommended, waiting for approval" even when the code could be
+   reverted; only work that does not depend on it continues meanwhile.
 5. A decision that loosens a gate is traced one layer downstream before it
    enters the contract.
 6. Each task names where its evidence runs; environments are ready before the

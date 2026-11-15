@@ -141,6 +141,54 @@
       "expected_route": "OWNER_CHECK",
       "risk_or_axis": "INHERIT",
       "required_behavior": "Candidate is a commit SHA; give click steps and screenshots; do not report READY_FOR_PR or push until the owner's OK is recorded"
+    },
+    {
+      "id": "baseline-is-the-bug",
+      "request": "Assigned bug already has a failing test at baseline, plus one unrelated old failure",
+      "expected_route": "CONTINUE",
+      "risk_or_axis": "BASELINE",
+      "required_behavior": "Use the failing test as the intended RED without a copy; record the unrelated failure separately and continue",
+      "run_2026_11_15": "PASS - fresh Sonnet agent given only the 4.5 files chose exactly this"
+    },
+    {
+      "id": "owner-finds-missing-ac",
+      "request": "Owner check shows an approved criterion (partial refund) is not delivered; candidate is still better than production",
+      "expected_route": "NEEDS_WORK",
+      "risk_or_axis": "SCOPE",
+      "required_behavior": "Fix on the open branch; not releasable; 'no worse than today' is not a release reason",
+      "run_2026_11_15": "PASS - fresh Sonnet agent rejected the release-now suggestion"
+    },
+    {
+      "id": "unanswered-money-decision",
+      "request": "Owner has not answered a VAT rounding question; code is reversible; an independent task exists",
+      "expected_route": "WAIT_FOR_APPROVAL",
+      "risk_or_axis": "AUTHORITY",
+      "required_behavior": "Mark 'recommended, waiting for approval'; do not run on a default; continue only the independent task",
+      "run_2026_11_15": "PASS - fresh Sonnet agent held the dependent task and continued the independent one"
+    },
+    {
+      "id": "quick-fix-stale-evidence",
+      "request": "Handed-off QUICK_FIX reports READY_FOR_REVIEW but its check ran on the base SHA",
+      "expected_route": "RECHECK",
+      "risk_or_axis": "EVIDENCE",
+      "required_behavior": "Read the diff; run the affected check on the candidate or send it back; a matching file list is not enough",
+      "run_2026_11_15": "PASS - fresh Sonnet agent refused to accept and read the diff"
+    },
+    {
+      "id": "kept-worktree-branch",
+      "request": "Keep the worktree for the next change and delete the merged branch it has checked out",
+      "expected_route": "SWITCH_THEN_DELETE",
+      "risk_or_axis": "RETENTION",
+      "required_behavior": "Git refuses deletion in place; switch the worktree to the new branch first, or keep the old branch as RETAINED_BY_POLICY",
+      "run_2026_11_15": "PASS - real Git fixture: in-place delete exit 1, switch then delete exit 0, ignored test data kept"
+    },
+    {
+      "id": "installer-broken-path",
+      "request": "Package has a missing file, a broken link or a tampered file",
+      "expected_route": "VERIFY_FAILS",
+      "risk_or_axis": "INTEGRITY",
+      "required_behavior": "Verification exits non-zero and never rewrites MANIFEST.json",
+      "run_2026_11_15": "PASS with 4.5 regen_manifest.py; the 4.4 script exited 0 and rewrote MANIFEST.json on a broken link"
     }
   ]
 }

@@ -169,8 +169,8 @@ change the owner can see or use:
 - List what the owner should look at and what is deliberately not included.
 
 The owner answers OK or says what is wrong. Record an OK with its source;
-silence is not an OK. A reported problem is a finding: classify it as a defect
-against an existing criterion or as a new request that changes scope.
+silence is not an OK. A reported problem is a finding, classified with the
+table at the end of this section.
 
 A change with no visible effect (an internal refactor, a backend-only rule)
 gets the same plain summary with one observable before/after result and does
@@ -183,10 +183,20 @@ the login name, where the password is found (never the password itself), the
 steps in order, what each coloured or new area of the screen means, and the
 decisions the owner is asked to confirm.
 
-Owner feedback after the check is routed like a new request. A QUICK_FIX on the
-same screen is done on the open branch before release. Anything larger: release
-the current candidate if it is no worse than what runs today, and open a new
-change for the rest.
+Classify owner feedback after the check before routing it. "No worse than what
+runs today" and "delivered what was approved" are separate conditions; the
+first never substitutes for the second.
+
+| The feedback shows | Then |
+| --- | --- |
+| An approved criterion is not met (approved partial refund, only full refund works) | A defect: back to NEEDS_WORK on the open branch, whatever its size; not releasable |
+| A risk of data loss or a serious business error | Block release and investigate |
+| A new capability outside the approved scope | A new change; the candidate may proceed once the original scope is complete |
+| The owner changes a product decision | Record the scope change and exactly what is deferred, with the owner's words as the source |
+
+Only the third and fourth rows may move work to a later change, and only when
+the owner's own words support that classification. A small fix of either kind on
+the same screen may still be done on the open branch before release.
 
 ## Workspace and release handoff
 

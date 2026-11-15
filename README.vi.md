@@ -4,6 +4,48 @@ Bản này thay thế bộ v3 và bản 4.0 (xem [CHANGELOG.md](CHANGELOG.md)). 
 và `release-housekeeping`. Phân loại scope, giao việc và ba tier vẫn nằm
 trong workflow, không nằm trong skill dev.
 
+## Nhìn nhanh: quy trình giúp gì
+
+Bạn nói nhu cầu và quyết các câu hỏi nghiệp vụ. Agent lo phần còn lại, và mỗi
+chặng có một điểm dừng để lỗi không đi tiếp sang chặng sau.
+
+```mermaid
+flowchart TD
+    A["Bạn nói nhu cầu<br/>/dev ..."] --> B{"Agent phân loại<br/>theo việc, không theo lời"}
+    B -->|"Sửa chữ, sửa nhỏ đã rõ"| Q["QUICK_FIX<br/>phiên rẻ làm, báo về"]
+    B -->|"Một tính năng hoặc một lỗi"| S["STANDARD"]
+    B -->|"Việc lớn nhiều mốc"| L["LARGE<br/>chia mốc, làm mốc đã duyệt"]
+    L --> S
+    S --> D["Khảo sát và đo<br/>máy chủ đang chạy gì, số liệu thật"]
+    D --> E["Bạn quyết<br/>thẻ quyết định bằng lời thường"]
+    E --> F["Builder viết test trước,<br/>rồi viết mã, commit cục bộ"]
+    F --> G["Lead soát<br/>bằng chứng, diff, trạng thái cuối"]
+    G -->|"Có lỗi"| F
+    Q --> H
+    G -->|"Đạt"| H["Bạn bấm thử<br/>các bước kèm ảnh chụp"]
+    H -->|"Chưa ổn"| F
+    H -->|"OK"| I["READY_FOR_PR"]
+    I -->|"Bạn nói: ship đi"| J["PR, gộp, triển khai,<br/>kiểm trên máy chủ"]
+    J --> K["Dọn nhánh, worktree,<br/>môi trường thử"]
+```
+
+Nếu sơ đồ không hiện: nhu cầu → phân loại → khảo sát và đo → bạn quyết →
+test trước rồi mã → lead soát → bạn bấm thử → READY_FOR_PR → "ship đi" →
+triển khai và kiểm → dọn dẹp.
+
+| Điểm dừng | Nó chặn loại lỗi nào | Ví dụ từ lượt chạy thật trên LH-ERP |
+| --- | --- | --- |
+| Khảo sát và đo | Quyết định dựa trên giả định | Ngưỡng so chữ giả định 0,70, đo ra phải là 0,30 |
+| Bạn quyết | Agent tự chọn thay bạn về nghiệp vụ | 8 quyết định của một thay đổi được ghi lại kèm phương án đã bỏ |
+| Test trước rồi mã | Mã chạy được nhưng sai yêu cầu | Lỗi được tái hiện bằng test trước khi sửa |
+| Lead soát | Báo "đạt" nhưng kết quả sai | Test đạt 60/60 trong khi đơn vị bị đổi từ Hộp sang ml |
+| Bạn bấm thử | Đúng theo test nhưng khó dùng | Phần dưới của cửa sổ soát được làm lại sau khi bạn xem |
+| Kiểm trên máy chủ | Script báo thành công nhưng thiếu thứ gì đó | Triển khai báo xong trong khi thiếu một model |
+| Dọn dẹp | Nhánh, container, tệp tạm tồn lại | Giữ volume, xoá phần còn lại, hỏi bạn một lần |
+
+Quyền của bạn nằm ở ba chỗ: quyết nghiệp vụ, bấm thử, và nói "ship đi".
+Agent không đẩy mã, không gộp và không triển khai khi chưa có câu đó.
+
 ## Cài bằng agent
 
 Đọc [INSTALL-HANDOFF.md](INSTALL-HANDOFF.md), hoặc giao file tự chứa

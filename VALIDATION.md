@@ -1,4 +1,28 @@
-# Validation - Dev System v4.4
+# Validation - Dev System v4.5
+
+## Revision 4.5
+
+The 4.5 edits (see CHANGELOG.md) were made by hand. Six targeted scenarios
+were run on 2026-11-15, only where the text had a conflict; this was not a full
+re-run of the system. Results are in validation/agent-scenarios.json (the six
+cases with a `run_2026_11_15` field).
+
+- Four decision cases (assigned bug already red at baseline, owner finds a
+  missing approved criterion, unanswered money decision, quick-fix evidence on
+  the wrong SHA): each given to one fresh Claude Sonnet agent that read only the
+  edited files and did not see the expected answer. All four chose the
+  expected action. One run per case: this shows the text can be read the
+  intended way, not that every model always will.
+- Kept worktree: a real Git fixture on Windows. Deleting the branch the kept
+  worktree has checked out is refused (exit 1); switching it to the new branch
+  first lets the delete succeed (exit 0) and keeps ignored test data.
+- Broken installer path: tools/regen_manifest.py run on copies with a missing
+  file, a broken link and a tampered file. 4.5 `--check` exits 1 in all three
+  and never writes; regeneration refuses to write. The 4.4 script exited 0 and
+  rewrote MANIFEST.json when a link was broken.
+
+Not checked: a handed-off QUICK_FIX session end to end, keep-warm over hours,
+and the scenarios on Codex or on other models.
 
 ## Revision 4.4
 

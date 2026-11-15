@@ -92,8 +92,20 @@ Tell the builder what to do when the assignment is wrong. A premise that turns
 out false but does not touch business behavior, stored data or blocking rules:
 follow the assignment's intent and report the deviation. Anything that would
 change those, or that reaches outside the assigned scope: stop and report the
-exact reason. A baseline check that is not green before the first edit is also
-a stop: report the failing lines so old failures are never mixed with new ones.
+exact reason.
+
+A baseline check that is not green before the first edit is classified, not
+automatically a stop. Record the failing lines first either way, so old failures
+are never mixed with new ones:
+
+| The baseline fails because | Then |
+| --- | --- |
+| It reproduces exactly the bug this task was assigned to fix | Record it as the task's intended RED (tdd.md) and continue |
+| An old failure unrelated to this task | Record it separately; continue only if it does not void the evidence for the part being changed |
+| A broken environment, or a failing premise not yet understood | Stop the affected part and report the blocker |
+
+"Exactly the assigned bug" means the failing assertion matches the reported
+symptom; a failure that merely sits in the same file is the second row.
 
 ## Feedback is an evidence-backed work item
 

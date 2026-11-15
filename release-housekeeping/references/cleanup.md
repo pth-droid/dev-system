@@ -52,8 +52,20 @@ Use a reviewed removal plan; many tools have no safe automatic dry-run.
 
 Before retiring a test environment, check whether a follow-up change on the
 same area has already been requested. If so, keep the environment and its
-worktree, record in the resource ledger that they pass to that change, and
-still delete the merged branches.
+worktree and record in the resource ledger that they pass to that change. Git
+refuses to delete a branch a worktree still has checked out, so a kept
+worktree is handed over in this order, never by deleting its branch in place:
+
+1. Stop any agent still writing in it for the old change.
+2. Confirm it is clean (section 4's status checks) and archive the evidence to keep.
+3. Choose the base for the next change (normally the freshly synced main).
+4. Switch the kept worktree to the next change's new branch from that base.
+5. Update the ledger: new owner change, branch, base SHA, environment version.
+6. Only then delete the old merged branch, under section 4's rules.
+
+If the next change is not ready to start, keep the old branch checked out and
+report it as RETAINED_BY_POLICY ("kept: worktree still on it for <change>"),
+not as cleanup pending.
 
 ## 3. Retire test services without destroying reusable environments
 
@@ -115,7 +127,8 @@ required. Use `git worktree remove <EXACT_WORKTREE>` from a surviving directory;
 do not `rm -rf` it and do not use --force to bypass dirty/submodule protections.
 If removal refuses, inspect and preserve the cause. Do not force completion.
 
-Delete only the associated local branch AFTER worktree removal. `git branch -d`
+Delete only the associated local branch AFTER worktree removal, or after a kept
+worktree was switched to its next branch (section 2). `git branch -d`
 is the normal path. A squash/rebase merge may not satisfy Git's ancestry test.
 Never interpret that refusal as blanket permission for -D: verify the host's
 merged PR, exact retired head, equivalent integrated content and absence of later

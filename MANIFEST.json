@@ -1,22 +1,22 @@
 {
   "package": "dev-system",
-  "version": "4.4",
+  "version": "4.5",
   "files": {
     "CHANGELOG.md": {
-      "bytes": 6944,
-      "sha256": "6e3929d208921b867be26db69fb9b811cdd70fe4e6958bbd6db1dfda3e886650"
+      "bytes": 8487,
+      "sha256": "a7b22324891aa1a28e85bb7c887b172c2548359b72fe2f4989a6e7390d9097ba"
     },
     "INSTALL-HANDOFF.md": {
-      "bytes": 7831,
-      "sha256": "bac691f992d785ff4e193dd442ec130d45d356c84ba97d594b2116360bbc94f1"
+      "bytes": 8211,
+      "sha256": "2195339d7819b6f27e350b2f123460ca22292735b3f5201c1b0e627679e048bf"
     },
     "README.vi.md": {
-      "bytes": 3474,
-      "sha256": "f47847632464234c38262b4f3fc701fb2cc83b50423ffd93e6264b53b3fef29f"
+      "bytes": 6247,
+      "sha256": "0f9d13f9590970dcd8beded766b33661440b8cde17951cd588a2ba94d6ef155c"
     },
     "VALIDATION.md": {
-      "bytes": 4034,
-      "sha256": "a3cb7aa54bdfa977b0ebc5182c6f069c664ca2eb0f5c26129280c6ea64b2c148"
+      "bytes": 5388,
+      "sha256": "1c590a99df2d298a226d8f350e410a9bf54bf05ebd82090a426977f2eb246578"
     },
     "adapters/README.md": {
       "bytes": 1294,
@@ -35,8 +35,8 @@
       "sha256": "1e7275578175076056571603dd4f17979b3995eec45d5d8c9cbc01feea3e8a28"
     },
     "dev-guardrails/SKILL.md": {
-      "bytes": 12635,
-      "sha256": "f0ccba63420562479b88e1d8403b6361237b5b6e79411afd5c2366f4cfe81fcd"
+      "bytes": 13010,
+      "sha256": "a8da9999c2e24a4606718e5cd059638c1d8a57feb4a59b5795c9248f429fd0b8"
     },
     "dev-guardrails/SOURCES.md": {
       "bytes": 3069,
@@ -59,16 +59,16 @@
       "sha256": "2cb00c26d324ab86170d80a0a492414702eed71afe09deab194b2e2d020cc2b6"
     },
     "dev-guardrails/references/planning-handoff.md": {
-      "bytes": 7483,
-      "sha256": "30c9f618c5da43a1ceea51132c5091bf9a18b6647447aa966668203f10c85a3b"
+      "bytes": 8108,
+      "sha256": "c7ea4645576d8eea72059e77c6aff4f66c52cf10ece12a116ee082aa3db09f72"
     },
     "dev-guardrails/references/tdd.md": {
-      "bytes": 5365,
-      "sha256": "b308229c023efa5190c1d7cbb255f24e80b275fd106a21486eb1340b7caf3008"
+      "bytes": 5523,
+      "sha256": "fcc13431441cb79d3a4810d61fa2f7e4eb669a146a41cce742b3c057731ba04a"
     },
     "dev-guardrails/references/verification.md": {
-      "bytes": 11822,
-      "sha256": "e3668ab9583fcb08794e723ab78b81372e28fd085395bbbe25d5fdfdb0a9a46e"
+      "bytes": 12508,
+      "sha256": "9ca0e061b4d36f230b4f3fef27ed53f471d04818b50531c57cb31b79fae01870"
     },
     "dev-guardrails/references/worktree.md": {
       "bytes": 4644,
@@ -91,8 +91,8 @@
       "sha256": "80d2150b62ce6bf066ef93026697035329a520e3da5a6f02334b9e0ba33a6dfe"
     },
     "release-housekeeping/references/cleanup.md": {
-      "bytes": 9225,
-      "sha256": "b2c97fc3d7f9b7ac1031a851e52059930255b23c07a56449ea7e5f0ce61ec41c"
+      "bytes": 10035,
+      "sha256": "e32828ee35171804a58e9800d3e3c0e1fb3b9003ccc2d83d0c24b0bad1198653"
     },
     "release-housekeeping/references/deploy-and-migrate.md": {
       "bytes": 5500,
@@ -107,8 +107,8 @@
       "sha256": "5f23387a8550c9058cb0153daf10782bb8ef2d08ffbec0f86d5e0b795d79c41d"
     },
     "validation/agent-scenarios.json": {
-      "bytes": 5826,
-      "sha256": "3a6f6395aa5da9834a5277cd63df71ec609bf02e07e1224e3d4fd196a7133226"
+      "bytes": 8618,
+      "sha256": "552c2a71e8b69712e09c96bf55784dcce49a194a8adff9f425e9505548e6fd88"
     },
     "validation/current-checks.json": {
       "bytes": 9760,
@@ -123,12 +123,12 @@
       "sha256": "67349bb2bdbe2b119abb45e5fcc36d49a5106b6aec590386d9c5658c076a734f"
     },
     "workflow/daily-workflow.md": {
-      "bytes": 25337,
-      "sha256": "8a521d2a4d88691a59c9a906f4f5b2ca9057f65a81bcde22806c8181b1c9470d"
+      "bytes": 26220,
+      "sha256": "ed1469cb0f67166a5617817f5dbe63a3587b5804dedf71d9db48cee2d1973a90"
     },
     "workflow/dev-router.md": {
-      "bytes": 15322,
-      "sha256": "b6ecd333d8833efbdc339fe49f6d7362c906b7aa005bb7aa21880daadbf2642a"
+      "bytes": 16550,
+      "sha256": "c9b729df7f6f1b807cbfe57024498326eb45c8126a5fbde20bf022c6e80f5480"
     },
     "workflow/entry-sources.md": {
       "bytes": 849,

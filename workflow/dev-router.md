@@ -129,6 +129,11 @@ low-cost model recorded in project-setup.md, and stays out of the loop until
 the report arrives. 3a and 3b still say what the fix needs; this only says
 where it runs.
 
+A handed-off fix is a choice of who does the work, never a lower standard: the
+same TDD, evidence and owner-check rules apply. Not every small fix is worth a
+new session; when one word or one line would cost less to change here than to
+brief, start and receive a worker, the lead does it itself under 3a/3b.
+
 Hand it off only when ALL of these hold; otherwise run it as 3a/3b with the
 lead's review:
 1. Something to check against already exists: a test that covers the edited
@@ -139,21 +144,35 @@ lead's review:
    This one is absolute; the new session never weighs it.
 5. Reverting one commit undoes it.
 
-The assignment is short: the outcome in one sentence, the files it may touch,
-the check to run, the branch rule, "no push, merge, deploy or production
-access", and this section. Two handed-off fixes never share a file.
+The new session knows nothing the lead knows, so the assignment carries the
+minimum it needs: the absolute worktree path, the branch, the base SHA, the
+behavior to reach in one sentence, the files it may touch, the check to run
+(exact command), where to write the report, "no push, merge, deploy or
+production access", and this section. Two handed-off fixes never share a file.
 
 The new session first re-checks the five conditions against the actual code.
 If one fails it stops and says which, without editing. Otherwise it follows 3a
-or 3b, commits on a short branch, and reports. The report opens with what the
-orchestrating session needs, within the first 400 characters: DONE or STOPPED,
+or 3b, commits on its assigned branch, and reports. The report opens with what
+the orchestrating session needs, within the first 400 characters: one status,
 the commit SHA, the check that ran and its result line, and what was not
-checked. Details go to a file named in the report.
+checked. The detailed evidence (command, raw output, the SHA it ran on) goes to
+the named report file and stays readable there.
 
-On receiving the report the orchestrating session re-runs nothing. It looks at
-the list of changed files against the assignment, the result line of the
-check, and the end state when the change is visible; then it reports to the
-owner. Release and cleanup follow the usual path.
+| Status | Means |
+| --- | --- |
+| READY_FOR_REVIEW | Committed, the check ran on that commit, evidence in the file |
+| BLOCKED | A condition failed or something prevents the fix; says which, nothing edited or what was left |
+| NEEDS_OWNER_CHECK | Committed and checked, but the result is something the owner must look at |
+
+On receiving the report the orchestrating session does not re-run a check that
+is still valid just for reassurance. It does read the diff (for a small fix,
+reading the small diff is the proportionate review; a correct file list does
+not prove a correct edit), compares changed files with the assignment, and
+reads the evidence file. It runs the affected check itself, or sends it back,
+when the evidence is missing, ran on another SHA than the candidate, is
+ambiguous, or does not show the assigned behavior. It then looks at the end
+state when the change is visible and reports to the owner. Release and cleanup
+follow the usual path.
 
 ## 4. STANDARD - the normal daily development loop
 
