@@ -20,6 +20,19 @@ The optional housekeeping entry follows the same pattern: Claude Code copies
 `.agents/skills/housekeeping/` for `$housekeeping`. Both point to the
 release-housekeeping skill's housekeeping-sweep.md and authorize only its plan.
 
+Claude Code commands in `~/.claude/commands/` (`ship.md`, `warm.md`, and
+`housekeeping.md`) have their source here in `claude/`. Prefer a symbolic link
+from the command folder to the file in `claude/` so an update in this repo
+takes effect at once. Creating a link on Windows needs Administrator rights or
+Developer Mode; if the link cannot be made, copy the file again after each
+change to the source. A file can be linked only if it has no machine-specific
+paths: `ship.md` and `warm.md` currently contain `D:\Working\Dev system\...`
+paths, so they are a copy until those paths are made relative.
+`dev.md` is also still a copy: the installed version carries an absolute path
+to the workflow router, and the repo version expects
+`docs/agent-workflow/dev-router.md` in the project. Linking it would make `/dev`
+fail in projects that lack that folder.
+
 Read-only discovery/menu checks verify registration without starting product
 work. Files installed and invocation verified are different statuses. If the host
 cannot register a shortcut, report that and use an explicit runbook instruction.
