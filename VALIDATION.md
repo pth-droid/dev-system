@@ -1,4 +1,23 @@
-# Validation - Dev System v4.5
+# Validation - Dev System v4.6
+
+## Revision 4.6
+
+housekeeping-sweep.md was written by hand after a design session with the
+owner. Two checks on 2026-11-15:
+
+- A read-only inventory of the real LH-ERP repository (18 worktrees, 8 extra
+  branches) by a throwaway script, before the reference was written. It showed
+  that every clean, merged host-managed worktree belonged to an idle but not
+  archived Claude desktop session, which is why such items are never removed
+  with Git.
+- One fresh Claude Sonnet agent, given only the reference and those facts,
+  produced the plan and first question: nothing removed, unmerged work kept,
+  the other repository's worktree left alone, asked part by part. It found three
+  unclear places (merged local branches without a worktree, items in both C and
+  D, the session's own folder), which were fixed; the fixed text was not re-run.
+
+Not run: approving and cleaning any part, Docker discovery, archiving a session
+through the host, and the /housekeeping and $housekeeping adapters' registration.
 
 ## Revision 4.5
 

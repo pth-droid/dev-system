@@ -67,7 +67,10 @@ Keep every skill's references/assets/agents files; don't copy only SKILL.md.
    Do not switch to a global user-wide installation without that scope's approval.
    Install the entry adapter from adapters/README.md: Claude Code gets only
    adapters/claude/dev.md at .claude/commands/dev.md; Codex gets the full
-   adapters/codex/dev folder at .agents/skills/dev (invoke $dev). A custom host
+   adapters/codex/dev folder at .agents/skills/dev (invoke $dev). The
+   housekeeping entry (adapters/claude/housekeeping.md,
+   adapters/codex/housekeeping) is installed the same way when the owner wants
+   it. A custom host
    requires a supported binding. Inspect existing /dev commands/skills first;
    preserve/merge or report a name conflict, never silently override user policy.
    Resolve workflow paths in adapters when using a nonstandard docs location.

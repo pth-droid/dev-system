@@ -13,7 +13,9 @@ Do not create a swarm, dispatcher, scheduler, provider binding or new CI system.
 ## Modes and authority
 
 Accept plan-only, execute, resume or cleanup-only as natural-language intents,
-not magic CLI flags. Default to plan-only if execution authority is absent.
+not magic CLI flags. A cleanup the owner starts for leftovers of the open
+folder's repository, with no change being released, is a housekeeping sweep:
+read housekeeping-sweep.md and skip sections 0-5 below. Default to plan-only if execution authority is absent.
 The request to install this skill is NOT authority to publish, merge, deploy,
 migrate, delete branches or remove data in any repository.
 
@@ -57,6 +59,7 @@ Never infer permission from tool credentials or from READY_FOR_PR.
 | Component impact, migrations, rollout and smoke | [deploy-and-migrate.md](references/deploy-and-migrate.md) |
 | Local main and resource retirement | [cleanup.md](references/cleanup.md) |
 | Existing/reusable test environment and data | [test-environment-policy.md](references/test-environment-policy.md) |
+| Owner-started sweep of leftovers with no release (/housekeeping) | [housekeeping-sweep.md](references/housekeeping-sweep.md) |
 
 Use [release-record.md](assets/release-record.md) selectively in the durable runtime
 ledger, with links to the existing spec and evidence. Do not create a duplicate

@@ -81,6 +81,10 @@ version the server reports, the changed file or image actually being served,
 one real run of the changed path. A rollback path that has never been executed
 is reported as not verified.
 
+This deployment check runs on every release. There is no click-through of the
+screens on production after a deploy: clicking happens before release, in the
+owner check of a change with a user interface (dev-guardrails verification.md).
+
 ## Failure / resume / cleanup-only
 
 Record merged/deployed/migrated stages independently. Stop, retain diagnosis,

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Housekeeping Sweep"
+  short_description: "Plan and clean leftovers of finished work, part by part."
+  default_prompt: "Use $housekeeping to plan the cleanup of this repository's leftovers and ask before each part."
+policy:
+  allow_implicit_invocation: false

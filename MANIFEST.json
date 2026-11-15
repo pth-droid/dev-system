@@ -1,26 +1,26 @@
 {
   "package": "dev-system",
-  "version": "4.5",
+  "version": "4.6",
   "files": {
     "CHANGELOG.md": {
-      "bytes": 8487,
-      "sha256": "a7b22324891aa1a28e85bb7c887b172c2548359b72fe2f4989a6e7390d9097ba"
+      "bytes": 9579,
+      "sha256": "54667792e7b76c200b4ff733fc577764787f12b85db1fee8cb6aeb33555a07ff"
     },
     "INSTALL-HANDOFF.md": {
-      "bytes": 8211,
-      "sha256": "2195339d7819b6f27e350b2f123460ca22292735b3f5201c1b0e627679e048bf"
+      "bytes": 8357,
+      "sha256": "bafff19bf575ca48ef5ab0f748ca99efa28dcdce612ee572a9aab2e2880ac360"
     },
     "README.vi.md": {
-      "bytes": 6247,
-      "sha256": "0f9d13f9590970dcd8beded766b33661440b8cde17951cd588a2ba94d6ef155c"
+      "bytes": 7271,
+      "sha256": "27d7889a081419af865c371aa79fc040b59e97e6bed9cb5caf89472fc426180b"
     },
     "VALIDATION.md": {
-      "bytes": 5388,
-      "sha256": "1c590a99df2d298a226d8f350e410a9bf54bf05ebd82090a426977f2eb246578"
+      "bytes": 6393,
+      "sha256": "0406e103c6755b9bfa2fe54cd0a49cf5a726a66144ffc890d86ab9492aa1b6b0"
     },
     "adapters/README.md": {
-      "bytes": 1294,
-      "sha256": "1e73f823e54aa5bd46b74af8ae3029caace14a2e24bd35fded4ba88c88d9a8b3"
+      "bytes": 1644,
+      "sha256": "c1f3ef7c936c8e41377c371e5b9d2a538de97cdd7cce5be4ee7054eba887fbce"
     },
     "adapters/claude/dev.md": {
       "bytes": 845,
@@ -67,16 +67,16 @@
       "sha256": "fcc13431441cb79d3a4810d61fa2f7e4eb669a146a41cce742b3c057731ba04a"
     },
     "dev-guardrails/references/verification.md": {
-      "bytes": 12508,
-      "sha256": "9ca0e061b4d36f230b4f3fef27ed53f471d04818b50531c57cb31b79fae01870"
+      "bytes": 12738,
+      "sha256": "0e6ad57ea7d080cb18aa8bab9f3aef0b9ecafb0bcf4d532e8435f25a128f8dd3"
     },
     "dev-guardrails/references/worktree.md": {
       "bytes": 4644,
       "sha256": "4e6016bfe883cc033af1fb5adf695c3212b373018853598f1ee4bb71113ac55f"
     },
     "release-housekeeping/SKILL.md": {
-      "bytes": 10192,
-      "sha256": "08183fd2fae1add685a2c906e532d3a38d4b25c804f65b93488975d16b329723"
+      "bytes": 10507,
+      "sha256": "6c9ac2fa0957d3c4ce1ba6c3ae39f2c67f04e6ac42987c2085ae8463efad9658"
     },
     "release-housekeeping/SOURCES.md": {
       "bytes": 1955,
@@ -95,8 +95,8 @@
       "sha256": "e32828ee35171804a58e9800d3e3c0e1fb3b9003ccc2d83d0c24b0bad1198653"
     },
     "release-housekeeping/references/deploy-and-migrate.md": {
-      "bytes": 5500,
-      "sha256": "d9a6a67d7ad2af4d9a60a987428ec03d1f870dee93f0742c76e92a7be7526adc"
+      "bytes": 5737,
+      "sha256": "732813c8559def64939bb8dd61d1f9f66a4b68f82e234cc993a5815bc478c5fc"
     },
     "release-housekeeping/references/pr-and-merge.md": {
       "bytes": 4732,
@@ -107,8 +107,8 @@
       "sha256": "5f23387a8550c9058cb0153daf10782bb8ef2d08ffbec0f86d5e0b795d79c41d"
     },
     "validation/agent-scenarios.json": {
-      "bytes": 8618,
-      "sha256": "552c2a71e8b69712e09c96bf55784dcce49a194a8adff9f425e9505548e6fd88"
+      "bytes": 9234,
+      "sha256": "e73d04fec3d7d8cb2c8b3b1396d9cd5eb97bcc7329c388389952002319be46cd"
     },
     "validation/current-checks.json": {
       "bytes": 9760,
@@ -127,8 +127,8 @@
       "sha256": "ed1469cb0f67166a5617817f5dbe63a3587b5804dedf71d9db48cee2d1973a90"
     },
     "workflow/dev-router.md": {
-      "bytes": 16550,
-      "sha256": "c9b729df7f6f1b807cbfe57024498326eb45c8126a5fbde20bf022c6e80f5480"
+      "bytes": 16716,
+      "sha256": "5dda7fb74d8367763ad3ce8740b59d09212e735d9a9584edf6a705feaf83a4f0"
     },
     "workflow/entry-sources.md": {
       "bytes": 849,
@@ -161,6 +161,22 @@
     "workflow/worktree-lifecycle.md": {
       "bytes": 6115,
       "sha256": "ea58f1c82b08bd127a095c668a54592ef387a5c7ab5ceec1db9bf6752d3069e4"
+    },
+    "release-housekeeping/references/housekeeping-sweep.md": {
+      "bytes": 7314,
+      "sha256": "80f0aa199addbb1f818dc6c590684143f97d8337f04c5d30f7cb5613215c0613"
+    },
+    "adapters/claude/housekeeping.md": {
+      "bytes": 834,
+      "sha256": "df4381cee1e72c423aa9948cc393b4b7786ddf3baa699673853eba9578421bab"
+    },
+    "adapters/codex/housekeeping/SKILL.md": {
+      "bytes": 676,
+      "sha256": "9c381112b1c319cdd7baa21a85ff77315cc71eeea4d0c418ce4f318fabb8329c"
+    },
+    "adapters/codex/housekeeping/agents/openai.yaml": {
+      "bytes": 286,
+      "sha256": "1855c311a06d70108bdea1d27163cba3c079de435d85ff8095d0b527f32476a7"
     }
   }
 }

@@ -172,9 +172,12 @@ The owner answers OK or says what is wrong. Record an OK with its source;
 silence is not an OK. A reported problem is a finding, classified with the
 table at the end of this section.
 
-A change with no visible effect (an internal refactor, a backend-only rule)
-gets the same plain summary with one observable before/after result and does
-not wait for an answer. A no-logic edit needs only its before/after evidence
+Clicking through screens (main's walk below and the owner's check) is only for
+a change with a user interface, and it happens here, before release, on the
+candidate; there is no click-through on production after deploy. A change with
+no visible effect (an internal refactor, a backend-only rule, a script) gets
+the same plain summary with one observable before/after result and does not
+wait for an answer. A no-logic edit needs only its before/after evidence
 in the report.
 
 Before inviting the owner, main walks the owner's own click path once (from the

@@ -11,6 +11,9 @@ checkpoint. Identify the actual intent: plan, implement/fix, verify-only, or
 resume. An empty /dev resumes one unambiguous active change. If there is no goal,
 ask for it; if several changes compete, ask one priority question. Do not pick a
 random backlog item. The calendar or a new chat is not a reason to restart work.
+A request to clean leftovers of finished work, with nothing to release, is not
+a dev lane: it is the release-housekeeping skill's housekeeping sweep
+(/housekeeping).
 
 Inspect the affected entry points, tests, current behavior and relevant callers
 only as needed to understand scope. Use a short targeted inspection, not a whole

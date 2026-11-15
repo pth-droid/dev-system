@@ -92,6 +92,22 @@ có thể dọn container hợp lệ nhưng GIỮ volume, cấu hình và cách 
 Không xóa worktree nếu môi trường giữ lại còn phụ thuộc vào nó.
 Giữ tài nguyên đúng chính sách vẫn là hoàn tất housekeeping.
 
+## Dọn tàn tích khi bạn muốn: `/housekeeping`
+
+Phần dọn của `/ship`, không có phần phát hành, cho những việc xong rồi mà chưa
+dọn. Bạn gõ `/housekeeping` (Codex: `$housekeeping`) trong thư mục của repo.
+
+1. Agent tìm tàn tích của đúng repo đó: worktree, nhánh cục bộ và trên remote,
+   container thử đã dừng. Chưa sửa gì.
+2. Chỉ thứ đã gộp hết vào `origin/main` và không phải worktree chính mới được
+   tính là dọn được. Thứ chưa gộp được báo lại và giữ nguyên.
+3. Agent đưa kế hoạch chia theo phần, rồi hỏi bạn từng phần. Bạn đồng ý phần
+   nào thì dọn phần đó.
+4. Mục còn vướng (file chưa commit, PR đang mở, phiên Claude chưa archive)
+   được hỏi từng bước một cho tới khi dọn được, hoặc bạn bảo giữ.
+5. Không bao giờ xoá volume, prune Docker hay đụng vào worktree chính. Mỗi lần
+   chạy đều hỏi lại từ đầu.
+
 ## Giới hạn
 
 Đây là hướng dẫn cho agent, chưa phải dispatcher hoặc cơ chế cưỡng chế.
