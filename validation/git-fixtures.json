@@ -1,0 +1,46 @@
+[
+  {
+    "test": "Create dedicated worktree from pinned origin/main in path with spaces",
+    "result": "PASS"
+  },
+  {
+    "test": "Worktree branch is separate and does not track main",
+    "result": "PASS"
+  },
+  {
+    "test": "Unrelated primary edits preserved and not copied to new worktree",
+    "result": "PASS"
+  },
+  {
+    "test": "Dirty primary can be detected before unsafe synchronization",
+    "result": "PASS"
+  },
+  {
+    "test": "Clean main fast-forwards and exact refs match",
+    "result": "PASS"
+  },
+  {
+    "test": "Merged source tests persist in main",
+    "result": "PASS"
+  },
+  {
+    "test": "Ordinary clean status hides ignored valuable files",
+    "result": "PASS"
+  },
+  {
+    "test": "Safe normal cleanup removes only owned worktree and branch",
+    "result": "PASS"
+  },
+  {
+    "test": "Ahead main: ff-only can succeed without parity",
+    "result": "PASS"
+  },
+  {
+    "test": "Diverged main refuses fast-forward without moving local head",
+    "result": "PASS"
+  },
+  {
+    "test": "Squash merge can retain branch when safe deletion rejects ancestry",
+    "result": "PASS"
+  }
+]

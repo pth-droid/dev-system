@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release and Housekeeping"
+  short_description: "Controlled PR, deploy, migrations, main sync and owned-resource cleanup"
+  default_prompt: "Use $release-housekeeping for the explicitly requested release scope. Verify targets and authority, pin artifacts, order migrations safely, and clean scoped run data while preserving reusable test environments, volumes and configuration. Remove only eligible containers/resources after verification. Plan only if authority is missing."

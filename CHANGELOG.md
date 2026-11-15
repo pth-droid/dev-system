@@ -1,0 +1,121 @@
+# Version 4.4 - 2026-11-15
+
+Owner-requested edits, made by hand, after measuring where the pilot's tokens
+went (POOR-MAN-MODE-ANALYSIS-2026-11-15.vi.md, not part of the package):
+
+- dev-router.md 3c: a QUICK_FIX that meets five conditions runs in a fresh
+  low-cost session that reports back to the orchestrating session, with the
+  result in the first 400 characters of its report. 3a and 3b are unchanged.
+- daily-workflow.md 2: Terra 6.1 xHigh added to the Tier 3 labels; pick the
+  model for a role by the context it will reach, because some models cost more
+  past a context threshold.
+- project-setup.md: lines for the hand-off model and the context thresholds.
+
+Internal links were checked and MANIFEST.json regenerated. Section 3c has not
+been run. The measurement scripts are in tools/usage/, outside the manifest.
+
+# Version 4.3 - 2026-11-15
+
+Owner-requested addition, made by hand:
+
+- daily-workflow.md 7a: owner-enabled keep-warm for the lead session. One
+  wake-up shortly before the prompt cache expires, which is also the progress
+  check of work in flight; it ends by what the lead waits for (work finished or
+  a watch ceiling; quiet hours or the owner's word), not by a count. The owner
+  turns it on and off in plain words in any language. Section 7 now names this
+  as the one scheduled activity the runbook creates.
+- daily-workflow.md 12: what to do when the session is left to go cold.
+- project-setup.md: four lines for the cache lifetime, the wake-up tool,
+  quiet hours and the watch ceiling.
+
+Correction to 4.2, same day:
+
+- dev-guardrails/SKILL.md core card item 8 said "Main re-runs the evidence
+  itself", which contradicted "Reuse authentic evidence" in verification.md and
+  daily-workflow.md 8. It now says main inspects the evidence (assertions, raw
+  output, end state) and re-runs only when the candidate or environment
+  changed, no raw output exists, or nobody ran the check.
+- verification.md: the repository's mandatory pre-deploy checks need a recorded
+  run on the candidate before READY_FOR_PR; the builder or a low-cost runner
+  may run them, main reads the output.
+
+The Claude Code command that implements keep-warm (`/warm`) lives in the user's
+commands folder, not in this package. Internal links were checked and
+MANIFEST.json regenerated; structural checks, installer and ZIP archives were
+not rerun or rebuilt. The cost reasoning behind the rule is an estimate from
+list prices; how a subscription plan counts cached tokens was not measured.
+
+# Version 4.2 - 2026-11-15
+
+Edits from the pilot on LH-ERP (four real changes and one quick fix, see
+PILOT-REVIEW-2026-11-14.vi.md, which is not part of the package). All are short
+paragraphs in existing files; none adds a mechanical gate.
+
+- dev-guardrails/SKILL.md: a 13-line core card at the top; numbers in reports
+  are copied from command output.
+- discovery.md: a sentence about current behavior carries its source.
+- planning-handoff.md: trace a relaxed gate one step downstream; each task says
+  where its evidence runs; what the builder does when the assignment is wrong,
+  and a non-green baseline is a stop.
+- verification.md: look at the end state and re-assert fixed values after every
+  step; repository-mandated pre-deploy checks run by main before READY_FOR_PR
+  with the exact command recorded; contents of the owner-check invitation; main
+  walks the click path first; owner feedback is routed like a new request.
+- daily-workflow.md: shared log files written once by main; environments ready
+  before the first task; main micro-fix of about five lines; owner report opens
+  with pending decisions and their defaults.
+- dev-router.md: builder pool matched to the lane; routing of mid-flight
+  requests and of pre-existing defects found while building.
+- deploy-and-migrate.md: verify the deployed state independently of the script.
+- pr-and-merge.md: confirm an outward step before the step that depends on it.
+- project-setup.md, worktree.md: link the repository's own runbook and follow
+  its worktree convention instead of filling templates.
+- cleanup.md: keep the test environment when a follow-up on the same area has
+  been requested.
+
+Made by hand. Internal links were checked and MANIFEST.json regenerated; the
+structural checks, extraction tests, installer and ZIP archives were not rerun
+or rebuilt. No scenario was added to validation/agent-scenarios.json.
+
+# Version 4.1 - 2026-11-14
+
+Owner-requested edits to 4.0, made by hand in this folder:
+
+- QUICK_FIX gains a no-logic edit path (dev-router.md 3a) for wording, docs and
+  spacing: a short branch instead of a worktree, the commit message as the only
+  record, one fitting check, and no need to load other workflow files.
+- Local commits on the change branch are part of building. The candidate is a
+  commit SHA; the dirty-tree hash fingerprint is removed. Push, PR, merge and
+  deploy still need separate authority.
+- Changes that do not affect each other may run in parallel without separate
+  approval, each in its own worktree (daily-workflow.md section 1).
+- Owner check: a change the owner can see or use needs the owner's recorded OK,
+  after seeing the candidate running, before READY_FOR_PR (verification.md).
+- Adds the owner status report (daily-workflow.md section 14).
+- Adds four authored scenarios (20 in total). None has been run with a model.
+
+The single-file installer and ZIP archives built for 4.0 were not rebuilt.
+The 4.0 folder is kept as dev-system-v4.0-original.zip, outside the manifest.
+
+# Version 4.0 - 2026-11-14
+
+Updates the complete v3 distribution with two related owner requests:
+
+- Adds the external /dev scope router: QUICK_FIX / STANDARD / LARGE, with risk and
+  uncertainty independent of size and model tier. Adds promotion rules, micro
+  contracts, session/milestone boundaries and checkpoint resume semantics.
+- Adds thin host adapters: Claude Code /dev command; Codex $dev skill entry.
+  All actual lane/delegation policy remains in workflow, not dev-guardrails.
+- Avoids duplicate approval for explicit, clear authorized fixes. Keeps worktrees,
+  meaningful TDD/evidence, required checks and risk review in every lane.
+- Separates logical test data cleanup, container lifecycle and storage retention.
+  Keeps reusable environments, volumes, schema/history/seed data and startup
+  recipes. Preserves active shared services and blocks unsafe broad resets.
+- Records exact retention identities and readiness; allows COMPLETE when expected
+  retained assets remain. Genuine unmet required cleanup is still pending.
+- Rebuilds both method skills, thin Codex adapter, complete archive and one-file
+  portable installer. No user repo, real deployment, database or Docker is touched.
+
+Earlier v3 introduced dedicated worktrees, release-housekeeping, safe main parity,
+scoped cleanup and the self-contained installer. Those safeguards remain unless
+explicitly tightened above. The retrospective reverify-project skill is unchanged.

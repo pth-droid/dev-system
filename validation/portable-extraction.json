@@ -1,0 +1,34 @@
+[
+  {
+    "test": "Standalone handoff extracts from arbitrary non-repo folder with verified file bytes; no companion archive",
+    "result": "PASS"
+  },
+  {
+    "test": "UTF-8 BOM handoff supported",
+    "result": "PASS"
+  },
+  {
+    "test": "Changed archive bytes rejected by SHA-256",
+    "result": "PASS"
+  },
+  {
+    "test": "Parent traversal rejected",
+    "result": "PASS"
+  },
+  {
+    "test": "Windows reserved path rejected",
+    "result": "PASS"
+  },
+  {
+    "test": "Symlink archive entry rejected",
+    "result": "PASS"
+  },
+  {
+    "test": "Case-insensitive duplicate paths rejected",
+    "result": "PASS"
+  },
+  {
+    "test": "Manifest detects a changed file even with recomputed archive digest",
+    "result": "PASS"
+  }
+]

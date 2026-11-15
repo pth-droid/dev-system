@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dev Workflow Entry"
+  short_description: "Enter the external scope-aware development workflow."
+  default_prompt: "Use $dev to start or resume the project's development workflow."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,166 @@
+{
+  "package": "dev-system",
+  "version": "4.4",
+  "files": {
+    "CHANGELOG.md": {
+      "bytes": 6944,
+      "sha256": "6e3929d208921b867be26db69fb9b811cdd70fe4e6958bbd6db1dfda3e886650"
+    },
+    "INSTALL-HANDOFF.md": {
+      "bytes": 7831,
+      "sha256": "bac691f992d785ff4e193dd442ec130d45d356c84ba97d594b2116360bbc94f1"
+    },
+    "README.vi.md": {
+      "bytes": 3474,
+      "sha256": "f47847632464234c38262b4f3fc701fb2cc83b50423ffd93e6264b53b3fef29f"
+    },
+    "VALIDATION.md": {
+      "bytes": 4034,
+      "sha256": "a3cb7aa54bdfa977b0ebc5182c6f069c664ca2eb0f5c26129280c6ea64b2c148"
+    },
+    "adapters/README.md": {
+      "bytes": 1294,
+      "sha256": "1e73f823e54aa5bd46b74af8ae3029caace14a2e24bd35fded4ba88c88d9a8b3"
+    },
+    "adapters/claude/dev.md": {
+      "bytes": 845,
+      "sha256": "978f4bfcef52820d2190815a1bbb91464be5673358ef463f1a68d3d8946bed1d"
+    },
+    "adapters/codex/dev/SKILL.md": {
+      "bytes": 1079,
+      "sha256": "3d81b372caee7940eee59eb791efe4d86a0419bce7e52649e76b214c7389f676"
+    },
+    "adapters/codex/dev/agents/openai.yaml": {
+      "bytes": 251,
+      "sha256": "1e7275578175076056571603dd4f17979b3995eec45d5d8c9cbc01feea3e8a28"
+    },
+    "dev-guardrails/SKILL.md": {
+      "bytes": 12635,
+      "sha256": "f0ccba63420562479b88e1d8403b6361237b5b6e79411afd5c2366f4cfe81fcd"
+    },
+    "dev-guardrails/SOURCES.md": {
+      "bytes": 3069,
+      "sha256": "fed48efc55d958040a75421e81c5148cb3d9014d0c125ebada83d1e01d0a832d"
+    },
+    "dev-guardrails/USAGE.md": {
+      "bytes": 2904,
+      "sha256": "d369689c1372d876bf25000788d12183f0cea0c0ef7fdaf26914da0adf1dc0bd"
+    },
+    "dev-guardrails/agents/openai.yaml": {
+      "bytes": 372,
+      "sha256": "dc85d36e96fde4564141dc8b09d4f142e2a15db3ec7fef171c0b91f0cd206970"
+    },
+    "dev-guardrails/assets/change-record.md": {
+      "bytes": 3150,
+      "sha256": "6a4289e9d0177d98508b4a41525c5ca322cc78738c439b42e7a74afe21e01a54"
+    },
+    "dev-guardrails/references/discovery.md": {
+      "bytes": 4611,
+      "sha256": "2cb00c26d324ab86170d80a0a492414702eed71afe09deab194b2e2d020cc2b6"
+    },
+    "dev-guardrails/references/planning-handoff.md": {
+      "bytes": 7483,
+      "sha256": "30c9f618c5da43a1ceea51132c5091bf9a18b6647447aa966668203f10c85a3b"
+    },
+    "dev-guardrails/references/tdd.md": {
+      "bytes": 5365,
+      "sha256": "b308229c023efa5190c1d7cbb255f24e80b275fd106a21486eb1340b7caf3008"
+    },
+    "dev-guardrails/references/verification.md": {
+      "bytes": 11822,
+      "sha256": "e3668ab9583fcb08794e723ab78b81372e28fd085395bbbe25d5fdfdb0a9a46e"
+    },
+    "dev-guardrails/references/worktree.md": {
+      "bytes": 4644,
+      "sha256": "4e6016bfe883cc033af1fb5adf695c3212b373018853598f1ee4bb71113ac55f"
+    },
+    "release-housekeeping/SKILL.md": {
+      "bytes": 10192,
+      "sha256": "08183fd2fae1add685a2c906e532d3a38d4b25c804f65b93488975d16b329723"
+    },
+    "release-housekeeping/SOURCES.md": {
+      "bytes": 1955,
+      "sha256": "6c985ad19e53c8b343caffcbc4517b2fee2391fdf1de46dc4acb6a0128284ab1"
+    },
+    "release-housekeeping/agents/openai.yaml": {
+      "bytes": 504,
+      "sha256": "5bc34f78b69741072ddba4f3e9c42ff2717c343fa7b44d6dcae37fbccfab8842"
+    },
+    "release-housekeeping/assets/release-record.md": {
+      "bytes": 2563,
+      "sha256": "80d2150b62ce6bf066ef93026697035329a520e3da5a6f02334b9e0ba33a6dfe"
+    },
+    "release-housekeeping/references/cleanup.md": {
+      "bytes": 9225,
+      "sha256": "b2c97fc3d7f9b7ac1031a851e52059930255b23c07a56449ea7e5f0ce61ec41c"
+    },
+    "release-housekeeping/references/deploy-and-migrate.md": {
+      "bytes": 5500,
+      "sha256": "d9a6a67d7ad2af4d9a60a987428ec03d1f870dee93f0742c76e92a7be7526adc"
+    },
+    "release-housekeeping/references/pr-and-merge.md": {
+      "bytes": 4732,
+      "sha256": "76d516c78895e1c412c2fd5c019553bad6d8f1fed06f74da2031e71751a516d7"
+    },
+    "release-housekeeping/references/test-environment-policy.md": {
+      "bytes": 6606,
+      "sha256": "5f23387a8550c9058cb0153daf10782bb8ef2d08ffbec0f86d5e0b795d79c41d"
+    },
+    "validation/agent-scenarios.json": {
+      "bytes": 5826,
+      "sha256": "3a6f6395aa5da9834a5277cd63df71ec609bf02e07e1224e3d4fd196a7133226"
+    },
+    "validation/current-checks.json": {
+      "bytes": 9760,
+      "sha256": "351ecba8390360e52e3671b9824c7c666b644826e0209f21612fad687f33560f"
+    },
+    "validation/git-fixtures.json": {
+      "bytes": 1111,
+      "sha256": "de6c0ad988a654b729ff1e96bebee83ba575ee0c1c8b9d9bcf48223bd3e0175d"
+    },
+    "validation/portable-extraction.json": {
+      "bytes": 736,
+      "sha256": "67349bb2bdbe2b119abb45e5fcc36d49a5106b6aec590386d9c5658c076a734f"
+    },
+    "workflow/daily-workflow.md": {
+      "bytes": 25337,
+      "sha256": "8a521d2a4d88691a59c9a906f4f5b2ca9057f65a81bcde22806c8181b1c9470d"
+    },
+    "workflow/dev-router.md": {
+      "bytes": 15322,
+      "sha256": "b6ecd333d8833efbdc339fe49f6d7362c906b7aa005bb7aa21880daadbf2642a"
+    },
+    "workflow/entry-sources.md": {
+      "bytes": 849,
+      "sha256": "1587a95f866bc37a176a306c39b329a61f68cbf29ea77a44a5e9991232b1cb72"
+    },
+    "workflow/project-setup.md": {
+      "bytes": 5335,
+      "sha256": "775245b7c1ce16a9dcd9a2ba1b94b085fae247f41fcbec0114a7313a02f66f87"
+    },
+    "workflow/prompts.md": {
+      "bytes": 5824,
+      "sha256": "1586b0103df4a2e1f8be646d4a8b2585a61ca71b70a0604758f9bc1f3f141282"
+    },
+    "workflow/release-setup.md": {
+      "bytes": 3631,
+      "sha256": "e539f0b646582b01d0dd3c5bbcba3bfb970fd6eb11e612628412a2ad2984953d"
+    },
+    "workflow/release-workflow.md": {
+      "bytes": 5119,
+      "sha256": "ce1b47fc11ce419d23b86f6ea49e8b9207c54e81781efecc50423cae22eff9ea"
+    },
+    "workflow/repo-instructions.md": {
+      "bytes": 3472,
+      "sha256": "353d311f3c6ccb2678256b69a137dda3aca37c4cd6ba3bac80cdf49c62f89cb4"
+    },
+    "workflow/resource-ledger.md": {
+      "bytes": 1902,
+      "sha256": "496d483bd8fc3498b9fcc5e68995431c5efd95d1e11ff2c95033a112316741f2"
+    },
+    "workflow/worktree-lifecycle.md": {
+      "bytes": 6115,
+      "sha256": "ea58f1c82b08bd127a095c668a54592ef387a5c7ab5ceec1db9bf6752d3069e4"
+    }
+  }
+}

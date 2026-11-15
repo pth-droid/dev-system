@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Guardrails"
+  short_description: "Owner-led specs, focused TDD, and evidence-based verification"
+  default_prompt: "Use $dev-guardrails for the assigned development phase. Reuse approved scope, explain consequential decisions, follow focused TDD, and verify against the spec. Leave agent selection and delegation to the external workflow."

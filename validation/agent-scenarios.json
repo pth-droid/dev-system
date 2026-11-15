@@ -1,0 +1,146 @@
+{
+  "status": "AUTHORED_NOT_EXECUTED_WITH_MODELS",
+  "purpose": "Acceptance fixtures for future host/agent evaluation, not benchmark results",
+  "cases": [
+    {
+      "id": "text-label",
+      "request": "Fix a misspelled non-functional button label",
+      "expected_route": "QUICK_FIX",
+      "risk_or_axis": "LOW",
+      "required_behavior": "No-logic path: short branch, no worktree or record; no fake unit-test RED; before/after evidence; commit message is the record"
+    },
+    {
+      "id": "empty-list",
+      "request": "Fix a known local list-rendering bug; expectation and cause clear",
+      "expected_route": "QUICK_FIX",
+      "risk_or_axis": "LOW",
+      "required_behavior": "Focused regression RED/GREEN; no full PRD"
+    },
+    {
+      "id": "unknown-sync",
+      "request": "Orders intermittently duplicate, cause unknown",
+      "expected_route": "STANDARD",
+      "risk_or_axis": "HIGH",
+      "required_behavior": "Investigate; concurrency risk; non-author review"
+    },
+    {
+      "id": "one-line-access",
+      "request": "Fix one missing tenant authorization check",
+      "expected_route": "STANDARD",
+      "risk_or_axis": "HIGH",
+      "required_behavior": "Small diff is not quick lane; negative access test"
+    },
+    {
+      "id": "known-money",
+      "request": "Correct one rounding rule in settlement",
+      "expected_route": "STANDARD",
+      "risk_or_axis": "HIGH",
+      "required_behavior": "Confirm agreed rule; financial regression evidence"
+    },
+    {
+      "id": "one-feature",
+      "request": "Add a known report filter with existing patterns",
+      "expected_route": "STANDARD",
+      "risk_or_axis": "MEDIUM",
+      "required_behavior": "Compact ACs; vertical slices; one change"
+    },
+    {
+      "id": "new-subsystem",
+      "request": "Build membership with billing, entry control and offline behavior",
+      "expected_route": "LARGE",
+      "risk_or_axis": "HIGH",
+      "required_behavior": "Plan; select current milestone; no full backlog execution"
+    },
+    {
+      "id": "visual-only",
+      "request": "Adjust only padding for a known narrow viewport issue",
+      "expected_route": "QUICK_FIX",
+      "risk_or_axis": "LOW",
+      "required_behavior": "No-logic path: short branch; before/after screenshot; no fabricated test"
+    },
+    {
+      "id": "data-migration",
+      "request": "Quickly rename a field with persisted data and API consumers",
+      "expected_route": "STANDARD",
+      "risk_or_axis": "HIGH",
+      "required_behavior": "Contract/migration impact; promote to LARGE if rollout requires milestones"
+    },
+    {
+      "id": "resume",
+      "request": "Invoke /dev with one active checkpoint",
+      "expected_route": "RESUME",
+      "risk_or_axis": "INHERIT",
+      "required_behavior": "Validate actual state; no new daily worktree or spec"
+    },
+    {
+      "id": "missing-goal",
+      "request": "Invoke /dev with no request or active change",
+      "expected_route": "ASK_GOAL",
+      "risk_or_axis": "UNKNOWN",
+      "required_behavior": "One goal question; do not choose backlog"
+    },
+    {
+      "id": "discovered-spread",
+      "request": "Quick fix turns out to require new shared state semantics",
+      "expected_route": "PROMOTE",
+      "risk_or_axis": "REASSESS",
+      "required_behavior": "Keep worktree; describe scope delta; obtain material approval"
+    },
+    {
+      "id": "shared-env",
+      "request": "Finish run on shared always-on test stack",
+      "expected_route": "DATA_ONLY",
+      "risk_or_axis": "RETENTION",
+      "required_behavior": "Clean scoped data; leave shared services/volumes intact"
+    },
+    {
+      "id": "idle-reusable",
+      "request": "Idle owned stack has durable config and named volume",
+      "expected_route": "CONTAINERS_KEEP_VOLUMES",
+      "risk_or_axis": "RETENTION",
+      "required_behavior": "Clean run data; remove eligible containers; keep exact volume IDs"
+    },
+    {
+      "id": "anonymous-storage",
+      "request": "Retained anonymous volume lacks reattachment recipe",
+      "expected_route": "BLOCK_RETIREMENT",
+      "risk_or_axis": "RETENTION",
+      "required_behavior": "Do not remove container/worktree until safe reuse is established"
+    },
+    {
+      "id": "baseline",
+      "request": "Cleanup command truncates entire shared test database",
+      "expected_route": "BLOCK_CLEANUP",
+      "risk_or_axis": "RETENTION",
+      "required_behavior": "Reject command; preserve baseline and other runs"
+    },
+    {
+      "id": "label-needs-logic",
+      "request": "A wording fix turns out to need a changed condition",
+      "expected_route": "PROMOTE",
+      "risk_or_axis": "REASSESS",
+      "required_behavior": "Leave the no-logic path; continue as a small behavior fix or STANDARD on the same branch with a regression test"
+    },
+    {
+      "id": "parallel-independent",
+      "request": "Two approved changes in different modules with separate test data and no shared deploy step",
+      "expected_route": "PARALLEL",
+      "risk_or_axis": "INDEPENDENCE",
+      "required_behavior": "Run both at once, each in its own worktree and branch; tell the owner which run in parallel and why; no extra approval"
+    },
+    {
+      "id": "parallel-shared-db",
+      "request": "Two approved changes that both write to the same test database tables",
+      "expected_route": "SEQUENTIAL",
+      "risk_or_axis": "INDEPENDENCE",
+      "required_behavior": "Run one after the other and say why"
+    },
+    {
+      "id": "owner-check",
+      "request": "A verified user-visible feature; the owner has not answered yet",
+      "expected_route": "OWNER_CHECK",
+      "risk_or_axis": "INHERIT",
+      "required_behavior": "Candidate is a commit SHA; give click steps and screenshots; do not report READY_FOR_PR or push until the owner's OK is recorded"
+    }
+  ]
+}

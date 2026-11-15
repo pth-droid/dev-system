@@ -1,0 +1,413 @@
+{
+  "version": "4.0",
+  "scope": "Structural/package/extractor checks only; no model evaluation or real deployment/Docker run",
+  "passed": true,
+  "count": 81,
+  "checks": [
+    {
+      "check": "internal_file_links",
+      "passed": true,
+      "detail": "34 links inspected; []"
+    },
+    {
+      "check": "entry_metadata_dev-guardrails",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/USAGE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/assets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/agents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/assets/change-record.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references/discovery.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references/verification.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references/worktree.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references/tdd.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/references/planning-handoff.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_dev-guardrails/agents/openai.yaml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/USAGE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/assets/change-record.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/references/discovery.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/references/verification.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/references/worktree.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/references/tdd.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_dev-guardrails/references/planning-handoff.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "entry_metadata_release-housekeeping",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/assets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/agents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/assets/release-record.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/references/pr-and-merge.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/references/test-environment-policy.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/references/cleanup.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/references/deploy-and-migrate.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_release-housekeeping/agents/openai.yaml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/assets/release-record.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/references/pr-and-merge.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/references/test-environment-policy.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/references/cleanup.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_release-housekeeping/references/deploy-and-migrate.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "entry_metadata_dev",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_adapters/codex/dev/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_adapters/codex/dev/agents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "not_symlink_adapters/codex/dev/agents/openai.yaml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "method_model_independent_adapters/codex/dev/SKILL.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_QUICK_FIX",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_STANDARD",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_LARGE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_RISK",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_UNCERTAINTY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_READY_FOR_PR",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_selected approved milestone",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_worktree",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_non-author",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_Reclassify",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "router_rule_no auto-push",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_DATA_ONLY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_CONTAINERS_KEEP_VOLUMES",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_KEEP volumes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_RETAINED_BY_POLICY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_INSPECTED_ONLY",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_reattachment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_logical",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retention_rule_BLOCKED",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no_legacy_volume_removal_permission",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "claude_adapter_no_permission_escalation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "single_source_workflow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "authored_examples_labeled_not_executed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "portable_arbitrary_folder_with_spaces",
+      "passed": true,
+      "detail": "Verified archive extracted into a new temporary staging directory, not a repository"
+    },
+    {
+      "check": "portable_utf8_bom",
+      "passed": true,
+      "detail": "Verified archive extracted into a new temporary staging directory, not a repository"
+    },
+    {
+      "check": "reject_bad_payload_checksum",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_parent_traversal",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_windows_reserved_name",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_symlink_entry",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_case_collision",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_file_manifest_tampering",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    },
+    {
+      "check": "reject_wrong_package_version",
+      "passed": true,
+      "detail": "Rejected unsafe/corrupted input"
+    }
+  ]
+}
