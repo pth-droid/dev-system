@@ -1,26 +1,26 @@
 {
   "package": "dev-system",
-  "version": "4.6",
+  "version": "4.7",
   "files": {
     "CHANGELOG.md": {
-      "bytes": 9579,
-      "sha256": "54667792e7b76c200b4ff733fc577764787f12b85db1fee8cb6aeb33555a07ff"
+      "bytes": 10793,
+      "sha256": "c84b75cf9102b6e643366a1c0baecc477bdecb3ea95ca49876cea85b75411c7a"
     },
     "INSTALL-HANDOFF.md": {
       "bytes": 8357,
       "sha256": "bafff19bf575ca48ef5ab0f748ca99efa28dcdce612ee572a9aab2e2880ac360"
     },
     "README.vi.md": {
-      "bytes": 7271,
-      "sha256": "27d7889a081419af865c371aa79fc040b59e97e6bed9cb5caf89472fc426180b"
+      "bytes": 7415,
+      "sha256": "1fd4904f8c8b11247468c98f49917dd532f501a52bd885ec8d0938b4d261ec59"
     },
     "VALIDATION.md": {
       "bytes": 6393,
       "sha256": "0406e103c6755b9bfa2fe54cd0a49cf5a726a66144ffc890d86ab9492aa1b6b0"
     },
     "adapters/README.md": {
-      "bytes": 1644,
-      "sha256": "c1f3ef7c936c8e41377c371e5b9d2a538de97cdd7cce5be4ee7054eba887fbce"
+      "bytes": 2778,
+      "sha256": "8c8f85f885d62987392b5c2c802f7bdb641ff7edece752171fda930c54c797c3"
     },
     "adapters/claude/dev.md": {
       "bytes": 845,
@@ -135,8 +135,8 @@
       "sha256": "1587a95f866bc37a176a306c39b329a61f68cbf29ea77a44a5e9991232b1cb72"
     },
     "workflow/project-setup.md": {
-      "bytes": 5335,
-      "sha256": "775245b7c1ce16a9dcd9a2ba1b94b085fae247f41fcbec0114a7313a02f66f87"
+      "bytes": 7457,
+      "sha256": "23e7a9ba02ace6e293639f046f32189d7d56d8badfc674d7a081954b883f9270"
     },
     "workflow/prompts.md": {
       "bytes": 5824,
@@ -163,8 +163,8 @@
       "sha256": "ea58f1c82b08bd127a095c668a54592ef387a5c7ab5ceec1db9bf6752d3069e4"
     },
     "release-housekeeping/references/housekeeping-sweep.md": {
-      "bytes": 7314,
-      "sha256": "80f0aa199addbb1f818dc6c590684143f97d8337f04c5d30f7cb5613215c0613"
+      "bytes": 8103,
+      "sha256": "0e34b9c1ac3da3ef0ae89e11721b945da98a543e9381b7e5dd3ac7e132c74115"
     },
     "adapters/claude/housekeeping.md": {
       "bytes": 834,
@@ -177,6 +177,10 @@
     "adapters/codex/housekeeping/agents/openai.yaml": {
       "bytes": 286,
       "sha256": "1855c311a06d70108bdea1d27163cba3c079de435d85ff8095d0b527f32476a7"
+    },
+    "adapters/codex/source-qualification.md": {
+      "bytes": 2376,
+      "sha256": "895fba68c2580cf51601821f5db2f770d21b9eb48651ffa42746238148d284d2"
     }
   }
 }

@@ -1,3 +1,20 @@
+# Version 4.7 - 2026-11-16
+
+Owner-requested addition, designed with the owner before writing:
+
+- workflow/project-setup.md: "Source qualification". When a pool can be served
+  by several sources (accounts, keys, providers), each is checked from evidence
+  the runtime reports on that machine: QUALIFIED only if it lists the exact
+  model ID bound to the pool at the requested effort; otherwise SKIP (no model
+  or no credit) or UNKNOWN, which does not qualify. The brief names model and
+  effort explicitly so a weaker host default cannot be used. If no source
+  qualifies, stop and report; no lowering of the tier. Switching the signed-in
+  source needs the owner's one-time permission recorded on that machine. New
+  host-capability line: how this machine switches the model source, or none.
+- adapters/codex/source-qualification.md: where Codex reports the model list,
+  default model and credit state, and what never to print. Machine-neutral: no
+  account-switching tool is named in the shared files.
+
 # Version 4.6 - 2026-11-15
 
 Owner-requested addition, designed with the owner before writing:

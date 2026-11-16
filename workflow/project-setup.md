@@ -22,6 +22,7 @@ Host/version:
 Can spawn workers? Can resume a worker? Actual supported tool/mechanism:
 Do workers share a filesystem? How patches/commits are integrated:
 Can choose provider/model/effort per worker? Actual supported configuration:
+How this machine switches the model source (account, key, provider), or none:
 Allowed tools / MCP connections (no secret values):
 Available usage telemetry / unknown limits:
 Authorized fallback when delegation is unavailable:
@@ -43,6 +44,39 @@ Do not configure unavailable IDs or assert two models have equivalent ability.
 | Main / Tier 1 | <preference> | UNKNOWN | UNKNOWN | <runtime evidence> | UNKNOWN |
 | Hard builder / Tier 2 | <preference> | UNKNOWN | UNKNOWN | <runtime evidence> | UNKNOWN |
 | Builder / Tier 3 | <preference> | UNKNOWN | UNKNOWN | <runtime evidence> | UNKNOWN |
+
+## Source qualification (when a pool can be served by more than one source)
+
+A source is one way to reach a model: an account, an API key or a provider. A
+machine may have several (for example a free, a plus and a team account), and
+they can offer different model lists. A source that cannot serve the pool's
+model must not receive the task. Decide it per source, from evidence the
+runtime itself reports on this machine, and never from the plan or account
+name.
+
+| Source (label only, no secret) | Models it lists | Matches pool (actual model ID + effort) | Credit / quota now | Result |
+| --- | --- | --- | --- | --- |
+| <label> | <list from the runtime> | <yes / no, which pool> | <evidence or UNKNOWN> | QUALIFIED / SKIP: no model of the pool / SKIP: no credit / UNKNOWN |
+
+Rules:
+- A source is QUALIFIED only if its list contains the exact model ID bound to
+  the pool in the table above, with the effort the brief asks for. A weaker or
+  older model of the same family does not qualify.
+- UNKNOWN is not QUALIFIED. Do not guess from a plan name, a price or an old
+  list; a list is valid only for the source that was signed in when it was read.
+- The brief names the model ID and effort explicitly, so the worker cannot
+  fall back to the host's default model when that default is below the pool.
+- Try sources in the owner's rotation order and skip a source that is not
+  QUALIFIED. Report each skip with its reason in one line.
+- If no source is QUALIFIED, stop and report. Do not lower the tier or use a
+  source outside the owner's pool (daily-workflow.md section 2).
+- Reading a source's model list may require signing in to it. Switching the
+  signed-in source changes the owner's session, so switch only with the owner's
+  one-time permission recorded on this machine, and say which source is active
+  when you finish. How a host reads the list and the quota is in its adapter
+  (for Codex: adapters/codex/source-qualification.md).
+- Never print or store a token, key or email from a source. Record a label and
+  the result only.
 
 ## Existing check commands (inspect scripts for effects)
 

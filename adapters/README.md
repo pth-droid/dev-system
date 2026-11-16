@@ -33,6 +33,11 @@ to the workflow router, and the repo version expects
 `docs/agent-workflow/dev-router.md` in the project. Linking it would make `/dev`
 fail in projects that lack that folder.
 
+`codex/source-qualification.md` is a reference note, not an installable
+skill: it says where Codex reports the model list and the credit state that
+project-setup.md "Source qualification" needs. It names no account-switching
+tool; each machine records its own in project-setup.md.
+
 Read-only discovery/menu checks verify registration without starting product
 work. Files installed and invocation verified are different statuses. If the host
 cannot register a shortcut, report that and use an explicit runbook instruction.
