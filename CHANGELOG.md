@@ -4,7 +4,7 @@ Owner-requested changes, discussed with the owner before writing (lead session o
 LH-ERP J206, after a Codex run whose progress checks cost mostly context re-reads):
 
 - daily-workflow.md 7a: while a builder is in flight, watch by event. A watcher
-  script polls the cheap signals every 20 minutes without the model and wakes the
+  script polls the cheap signals every 5 minutes without the model and wakes the
   lead only on a new commit, job finished/failed, a limit or sign-in error, or a
   40-minute heartbeat (replaces the 50-minute tick while it runs). It prints only
   what is new since the last wake-up. Each progress line names its source

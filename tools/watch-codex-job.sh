@@ -5,14 +5,14 @@
 #   or a heartbeat (default 40 min, under the ~1 h prompt-cache lifetime, so it also keeps the cache warm).
 # It prints only what is NEW since the previous wake-up (cursor in the state file) plus the latest rate-limit line.
 #
-# Usage: watch-codex-job.sh <job> <worktree> <state-file> [heartbeat-min=40] [poll-min=20]
+# Usage: watch-codex-job.sh <job> <worktree> <state-file> [heartbeat-min=40] [poll-min=5]
 #   <job>: path of the plugin job without extension, e.g.
 #          ~/.claude/plugins/data/codex-openai-codex/state/<worktree>-<hash>/jobs/task-xxxx   (reads <job>.json and <job>.log)
 # First run: write the cursor with the current counts, so old lines are not reported:
 #   printf 'PROG=%s\nSHA=%s\nFAIL=%s\nERR=%s\n' "$(grep -c 'Assistant message captured' <job>.log)" \
 #     "$(git -C <worktree> rev-parse HEAD)" "$(grep -c 'Command failed' <job>.log)" 0 > <state-file>
 set -u
-J="$1"; WT="$2"; ST="$3"; HB="${4:-40}"; POLL="${5:-20}"
+J="$1"; WT="$2"; ST="$3"; HB="${4:-40}"; POLL="${5:-5}"
 ERR_RE='Turn failed|usage_limit|credits_depleted|unauthorized|exited with'
 touch "$ST"; . "$ST"
 P0="${PROG:-0}"; C0="${SHA:-$(git -C "$WT" rev-parse HEAD)}"; F0="${FAIL:-0}"; E0="${ERR:-0}"

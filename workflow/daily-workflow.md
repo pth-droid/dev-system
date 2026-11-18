@@ -224,7 +224,7 @@ wakes the lead when it ends, watch by event instead of by a fixed tick. Most of
 the cost of a check is the lead reading its whole context again, not the
 signals it reads, so wake the model only when there is something to say.
 - A watcher script (Codex jobs launched through the Claude Code plugin:
-  `tools/watch-codex-job.sh`) polls the cheap signals every 20 minutes without
+  `tools/watch-codex-job.sh`) polls the cheap signals every 5 minutes without
   the model. It ends, which wakes the lead, only on: a new commit in the
   builder's worktree, the job finished or failed, a usage-limit or sign-in
   error line in its log, or a heartbeat after 40 minutes without any of these.
