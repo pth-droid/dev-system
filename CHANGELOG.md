@@ -1,3 +1,14 @@
+# Version 4.8.1 - 2026-11-19
+
+Owner-requested addition:
+
+- daily-workflow.md 6: a Claude sub-agent brief always requires the /dev
+  workflow. A worker on a lower model tier than main messages main before going
+  on whenever a decision or uncertainty is not settled by the spec: context,
+  question, options and its recommendation, under 400 words.
+- daily-workflow.md 7a: Claude sub-agents need no watcher (they message main and
+  the host reports when they end).
+
 # Version 4.8 - 2026-11-19
 
 Owner-requested changes, discussed with the owner before writing (lead session on

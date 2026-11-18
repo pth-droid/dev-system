@@ -182,6 +182,14 @@ Send the worker:
   files. No commits on main, no push, no amend or rebase of reviewed commits.
 - Return format: READY_FOR_REVIEW or BLOCKED; candidate commit SHA, changed files, AC results,
   exact commands/results, evidence pointers, limitations, next useful question.
+- For a Claude sub-agent: require the /dev workflow in the brief (this runbook
+  and dev-guardrails), every time, not only for large changes.
+- When the worker's model tier is lower than main's: on any decision or
+  uncertainty the approved spec does not settle, it messages main before going
+  on (cross-session messaging, e.g. SendMessage to the lead) to ask for advice.
+  The message is clear and short, under 400 words: the context, the question,
+  the options and its recommendation. Until main answers it works only on parts
+  that do not depend on the answer.
 
 Do not send a confident implementation narrative as the only source of truth.
 Give source pointers; let the worker read the actual contract and relevant code.
@@ -236,6 +244,8 @@ signals it reads, so wake the model only when there is something to say.
   counts before the first run.
 - Do not read the builder's session rollout or transcript, except to diagnose
   an error the watcher reported.
+- A Claude sub-agent needs no watcher: it messages main itself (questions,
+  section 6) and the host reports when it ends.
 
 A wake-up is also the progress check. Do exactly this, then stop:
 - Read the cheap signals of work in flight: the builder's newest commit, the

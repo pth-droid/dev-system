@@ -1,10 +1,10 @@
 {
   "package": "dev-system",
-  "version": "4.8",
+  "version": "4.8.1",
   "files": {
     "CHANGELOG.md": {
-      "bytes": 12394,
-      "sha256": "bca2594a96ebd55c1be4fe1dcf9f9d459cc185e02f2a80731404326d14a1622f"
+      "bytes": 12859,
+      "sha256": "f669aebf67e69a1a13195d1f6c865fd4962e7d45ce69d143e0800d33341191fe"
     },
     "INSTALL-HANDOFF.md": {
       "bytes": 8357,
@@ -123,8 +123,8 @@
       "sha256": "67349bb2bdbe2b119abb45e5fcc36d49a5106b6aec590386d9c5658c076a734f"
     },
     "workflow/daily-workflow.md": {
-      "bytes": 28274,
-      "sha256": "f7b59f1c7d7b1fdb3879dc494c1e150e49706d90c6afce098cf7877cf10bf25a"
+      "bytes": 28964,
+      "sha256": "4b23518a583fa65646a0a258e897323a5baa083699fe2521cef9de0607339f9b"
     },
     "workflow/dev-router.md": {
       "bytes": 16716,
