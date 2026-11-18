@@ -1,3 +1,24 @@
+# Version 4.8 - 2026-11-19
+
+Owner-requested changes, discussed with the owner before writing (lead session on
+LH-ERP J206, after a Codex run whose progress checks cost mostly context re-reads):
+
+- daily-workflow.md 7a: while a builder is in flight, watch by event. A watcher
+  script polls the cheap signals every 20 minutes without the model and wakes the
+  lead only on a new commit, job finished/failed, a limit or sign-in error, or a
+  40-minute heartbeat (replaces the 50-minute tick while it runs). It prints only
+  what is new since the last wake-up. Each progress line names its source
+  ("the builder's log says ...", "commit ...") and marks unverified claims.
+- tools/watch-codex-job.sh: the watcher for Codex jobs launched through the
+  Claude Code plugin.
+- adapters/claude/warm.md: use the watcher instead of ticks while a Codex builder runs.
+- dev-guardrails references/verification.md: "Independent checks". Rerunning the
+  builder's tests is a provenance check only. Changes that produce or move figures
+  need (a) a reconciliation of key totals by a separate computation and (b) a read
+  of the assertions against the ACs; key rules need (c) a mutation spot check.
+- daily-workflow.md 8: points to those checks, and main reads the builder's whole
+  progress log once and compares it with the final report.
+
 # Version 4.7.1 - 2026-11-18
 
 Owner-requested label update:

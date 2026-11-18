@@ -219,6 +219,24 @@ expires (50 minutes in Claude Code), and each wake-up arms the next one. This
 fixed cadence keeps any two requests closer together than the cache lifetime,
 so real turns in between need no re-arming. Never keep two wake-ups.
 
+While a builder is in flight and the host can run a background command that
+wakes the lead when it ends, watch by event instead of by a fixed tick. Most of
+the cost of a check is the lead reading its whole context again, not the
+signals it reads, so wake the model only when there is something to say.
+- A watcher script (Codex jobs launched through the Claude Code plugin:
+  `tools/watch-codex-job.sh`) polls the cheap signals every 20 minutes without
+  the model. It ends, which wakes the lead, only on: a new commit in the
+  builder's worktree, the job finished or failed, a usage-limit or sign-in
+  error line in its log, or a heartbeat after 40 minutes without any of these.
+  The heartbeat stays under the cache lifetime, so it replaces the 50-minute
+  tick while the watcher runs. Never keep a watcher and a tick at once.
+- The watcher keeps a cursor (a state file) and prints only what is new since
+  the last wake-up: new progress lines, new commits, the change in the count
+  of failed commands, the latest rate-limit line. Set the cursor to the current
+  counts before the first run.
+- Do not read the builder's session rollout or transcript, except to diagnose
+  an error the watcher reported.
+
 A wake-up is also the progress check. Do exactly this, then stop:
 - Read the cheap signals of work in flight: the builder's newest commit, the
   last lines of its log or report file, the host's status of the agent. Never
@@ -226,6 +244,10 @@ A wake-up is also the progress check. Do exactly this, then stop:
 - Send the checks and the next wake-up in one message, then answer in one line
   (time, what was checked, what changed). Every extra request and every word
   written here is read again on all later steps.
+- Name the source of every claim in that line: "the builder's log says ...",
+  "commit ...". Mark what main has not checked itself as unverified. A builder
+  sends nothing on its own; never write "the builder reports" as if it were a
+  checked fact.
 - Act only when the work finished (start the review), stood still across two
   consecutive checks or asked a question (report it, stop watching), or a usage
   limit was hit (save state, section 10).
@@ -275,6 +297,15 @@ missing focused check from the same builder or an existing runner. Main may run
 a short decisive check itself if doing so is simpler; avoid relaying tiny tasks.
 Do not rerun all tests, all browsers, or the full retrospective audit for comfort.
 Do not accept a PASS sentence without underlying evidence and assertions.
+
+Rerunning the builder's own tests only shows that its evidence exists and passes
+on a clean environment at the candidate SHA; a wrong or missing test still
+passes. Correctness needs the independent checks in dev-guardrails
+verification.md: (a) reconcile the key figures by a separate computation and
+(b) read the assertions against the ACs for every change that produces or moves
+figures; (c) a mutation spot check for every key rule. Before the review, read
+the builder's whole progress log once and compare it with its final report: a
+problem in the log that the report leaves out is a finding.
 
 Batch findings into one review packet: F-ID, AC/source, expected/actual, path,
 proof, impact, correction objective, and whether blocking. Group one root cause.

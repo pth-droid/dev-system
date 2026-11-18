@@ -1,10 +1,10 @@
 {
   "package": "dev-system",
-  "version": "4.7",
+  "version": "4.8",
   "files": {
     "CHANGELOG.md": {
-      "bytes": 10793,
-      "sha256": "c84b75cf9102b6e643366a1c0baecc477bdecb3ea95ca49876cea85b75411c7a"
+      "bytes": 12395,
+      "sha256": "fa754e23e51dec4099bc69c4dca31b526b12f31f1c75d31179b9a8fb77fad277"
     },
     "INSTALL-HANDOFF.md": {
       "bytes": 8357,
@@ -67,8 +67,8 @@
       "sha256": "fcc13431441cb79d3a4810d61fa2f7e4eb669a146a41cce742b3c057731ba04a"
     },
     "dev-guardrails/references/verification.md": {
-      "bytes": 12738,
-      "sha256": "0e6ad57ea7d080cb18aa8bab9f3aef0b9ecafb0bcf4d532e8435f25a128f8dd3"
+      "bytes": 14079,
+      "sha256": "3a400586465dd3706c92e6a86218c1eb838cbe900fcff4199e57b614de11d454"
     },
     "dev-guardrails/references/worktree.md": {
       "bytes": 4644,
@@ -123,8 +123,8 @@
       "sha256": "67349bb2bdbe2b119abb45e5fcc36d49a5106b6aec590386d9c5658c076a734f"
     },
     "workflow/daily-workflow.md": {
-      "bytes": 26220,
-      "sha256": "ed1469cb0f67166a5617817f5dbe63a3587b5804dedf71d9db48cee2d1973a90"
+      "bytes": 28275,
+      "sha256": "8f19ac49a5e08b8d10b84528b10a663d181d65c9e3fc1b8c96bb349d1602afb4"
     },
     "workflow/dev-router.md": {
       "bytes": 16716,

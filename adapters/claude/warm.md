@@ -31,6 +31,14 @@ this session.
      commit in the builder's worktree, last lines of its log or report file) and the next
      one-shot `CronCreate`, pinned 50 minutes after this tick's time.
   3. Answer in one line. Act further only in the three cases section 7a lists.
+- While a Codex builder launched through the plugin is in flight, watch by event instead
+  of ticks (section 7a): delete the keep-warm job, then run
+  `D:\Working\Dev system\tools\watch-codex-job.sh <job> <worktree> <state-file>` as ONE
+  `Bash` background command (`run_in_background: true`; set the cursor first, see the
+  script header). When it ends, answer in one line naming the source ("the builder's log
+  says ...", "commit ..."), then re-arm the watcher, or start the review if the job
+  finished. When nothing is in flight any more and keep-warm is still wanted, go back to
+  the 50-minute one-shot job.
 - Ordinary turns in between need no re-arming: the ticks keep a fixed 50-minute cadence,
   so two requests are never more than 50 minutes apart. Only when a turn ran across the
   pinned minute, check `CronList` at its end and re-arm if the job is gone.

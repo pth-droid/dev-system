@@ -86,6 +86,29 @@ repeat a run whose inputs are unchanged. Whoever runs it records the exact
 command of each piece of evidence, including environment variables, so anyone
 can run it again.
 
+## Independent checks: figures and key rules
+
+Rerunning the builder's tests checks provenance (the evidence exists and passes
+on a clean environment at the candidate SHA), not correctness: a test that is
+wrong or missing passes again. Do it only when the evidence looks doubtful
+(odd counts, an unfamiliar environment, uncommitted files). Instead:
+
+- (a) Figures. When the change produces or moves figures (money, quantities,
+  balances, counts, reports, data migrations), reconcile the key totals against
+  a computation that does not use the builder's code: a query or script on the
+  source data, the source system's own report, or a figure already approved.
+  Every difference is explained to the unit by a named item, or it is a finding.
+- (b) Assertions. For the same changes, read the tests against the ACs. A test
+  that only checks "no error", checks a helper instead of the real entry point,
+  or leaves an AC uncovered is a finding.
+- (c) Key rules. For each key rule (an accounting or business rule, a safety
+  guard, idempotency, a permission), break the rule in a scratch copy, run the
+  focused test, confirm it goes red, then revert. A rule no test catches is a
+  finding.
+
+Record each check as evidence: the command or query, the figures on both sides,
+the explained differences, and for (c) the mutation and the red test.
+
 ## Review authorship and requirements
 
 The external workflow assigns the reviewer. Record the author and reviewer,
