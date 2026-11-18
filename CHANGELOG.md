@@ -1,3 +1,11 @@
+# Version 4.7.1 - 2026-11-18
+
+Owner-requested label update:
+
+- daily-workflow.md 2: Sol 6.1 labels in Tier 2 and Tier 3 now read Sol 6.2
+  (gpt-6.2-sol is listed by the active Codex account). Labels only; the
+  actual model ID is still resolved per run under project-setup.md.
+
 # Version 4.7 - 2026-11-16
 
 Owner-requested addition, designed with the owner before writing:

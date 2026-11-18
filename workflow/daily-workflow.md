@@ -59,8 +59,8 @@ prices, supported effort enums, or a promise of model availability.
 | Pool | User-provided labels | Use |
 | --- | --- | --- |
 | Tier 1 | Opus High; Opus xHigh | Lead, consequential design, deep investigation, difficult final judgment |
-| Tier 2 | Opus Medium; Sonnet Xhigh; Sol 6.1 Extra High | Difficult implementation or a bounded quick investigation |
-| Tier 3 | Sonnet High; Sol 6.1 High; Sol 6.1 Medium; Terra 6.1 xHigh; Deepseek 4.1 Flash High; GLM 5.3 Flash Max | Clear, routine implementation and deterministic check execution |
+| Tier 2 | Opus Medium; Sonnet Xhigh; Sol 6.2 Extra High | Difficult implementation or a bounded quick investigation |
+| Tier 3 | Sonnet High; Sol 6.2 High; Sol 6.2 Medium; Terra 6.1 xHigh; Deepseek 4.1 Flash High; GLM 5.3 Flash Max | Clear, routine implementation and deterministic check execution |
 
 Do not hardcode labels into API/CLI arguments. Resolve actual model IDs, effort
 support, permitted tools and cost constraints from the installed host once in
