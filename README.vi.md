@@ -1,4 +1,4 @@
-# Dev System v4.4
+# Dev System v4.8.1
 
 Bản này thay thế bộ v3 và bản 4.0 (xem [CHANGELOG.md](CHANGELOG.md)). Giữ hai skill phương pháp: `dev-guardrails`
 và `release-housekeeping`. Phân loại scope, giao việc và ba tier vẫn nằm
@@ -84,6 +84,23 @@ và gate trước PR.
   bấm thử kèm ảnh chụp và chờ bạn OK trước READY_FOR_PR.
 Đọc [daily-workflow.md](workflow/daily-workflow.md) và [prompts.md](workflow/prompts.md).
 
+## Trong lúc builder làm, và lúc soát
+
+- **Builder yếu hơn thì hỏi lead.** Giao việc cho tác tử con Claude luôn theo `/dev`. Builder
+  dùng model thấp hơn lead thì gặp quyết định hay điều chưa chắc mà spec chưa trả lời phải nhắn
+  lead trước khi làm tiếp: bối cảnh, câu hỏi, các phương án, đề xuất, dưới 400 từ.
+- **Theo dõi theo sự kiện.** Phần tốn của mỗi lần kiểm tiến độ là lead đọc lại cả cuộc trò
+  chuyện. Với builder Codex, script `tools/watch-codex-job.sh` tự kiểm mỗi 5 phút, không tốn
+  token, và chỉ đánh thức lead khi có commit mới, job xong hoặc lỗi, lỗi hạn mức, hoặc sau 40
+  phút (vừa kiểm treo vừa giữ ấm bộ nhớ đệm). Tác tử con Claude không cần script: nó tự nhắn lead.
+- **Báo có nguồn.** Mỗi câu tiến độ ghi rõ nguồn ("nhật ký builder ghi …", "commit …") và đánh
+  dấu phần lead chưa tự kiểm.
+- **Soát bằng cách kiểm độc lập.** Chạy lại test của builder chỉ chứng minh bằng chứng có thật.
+  Việc có số liệu: (a) đối chiếu số tổng bằng cách tính riêng, mọi chênh lệch giải thích tới
+  từng đơn vị, và (b) đọc assertion so với tiêu chí chấp nhận. Quy tắc then chốt: (c) cố tình làm
+  hỏng quy tắc trên bản nháp, test phải đỏ. Lead đọc toàn bộ nhật ký tiến độ một lần và so với
+  báo cáo cuối.
+
 ## Giữ môi trường test tái sử dụng
 
 Dọn dữ liệu của lượt test, không xóa baseline/schema/lịch sử migration.
@@ -116,4 +133,6 @@ dọn. Bạn gõ `/housekeeping` (Codex: `$housekeeping`) trong thư mục của
 Xem [VALIDATION.md](VALIDATION.md). Chưa chạy trên repo/host/Docker của bạn;
 20 tình huống agent trong gói là bộ kỳ vọng, chưa phải benchmark đã chạy.
 File tự chứa `INSTALL-DEV-SYSTEM.md` và các ZIP dựng cho 4.0 chưa được dựng lại;
-cài 4.4 từ thư mục này.
+cài 4.8.1 từ thư mục này. Script theo dõi theo sự kiện mới chạy thật
+một lần (một job Codex, LH-ERP 19/11/2026) ở dạng trước; dạng 5 phút / 40 phút và quy tắc
+"builder yếu hơn hỏi lead" chưa chạy thật.

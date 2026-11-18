@@ -1,6 +1,6 @@
 # Dev System
 
-Version 4.4. A set of written rules and runbooks for AI coding agents (Claude Code, Codex)
+Version 4.8.1. A set of written rules and runbooks for AI coding agents (Claude Code, Codex)
 that do day-to-day software changes: how to size a request, who does what, how to prove the
 work, and how to release and clean up afterwards.
 
@@ -18,7 +18,7 @@ agents; this package tells them how to behave. A Vietnamese overview is in
 | `workflow/` | Runbooks for the lead agent: scope router, daily workflow, project setup, release workflow, worktree lifecycle, resource ledger. |
 | `adapters/` | Thin entry points for `/dev` (Claude Code) and `$dev` (Codex). They only point at the router. |
 | `validation/` | 20 authored scenarios (expected behaviour, not measured results) and older check fixtures. |
-| `tools/` | `regen_manifest.py` rebuilds `MANIFEST.json`. `tools/usage/` holds token-usage measurement scripts. Neither is part of the package manifest. |
+| `tools/` | `regen_manifest.py` rebuilds `MANIFEST.json`. `watch-codex-job.sh` watches a running Codex builder by event (see below). `tools/usage/` holds token-usage measurement scripts. None of them is part of the package manifest. |
 | `MANIFEST.json` | Byte count and SHA-256 of every package file (except itself). |
 
 The method lives in the two skills. Routing and delegation live in `workflow/`, so the
@@ -57,6 +57,30 @@ TRIAGE -> DISCOVERY -> AWAITING_APPROVAL -> WORKSPACE_READY -> READY_TO_BUILD ->
 - **Reviewer who did not write the code**: required for high-risk work.
 - **Scripts and CI**: mechanical checks only.
 
+A Claude sub-agent brief always requires the `/dev` workflow. A builder on a lower model tier
+than the lead messages the lead before it settles a decision or an uncertainty the spec does
+not cover: context, question, options and its recommendation, under 400 words.
+
+## While the builder works, and the review
+
+- **Watch by event, not by clock.** Most of the cost of a progress check is the lead reading its
+  whole context again. For a Codex builder launched through the Claude Code plugin,
+  `tools/watch-codex-job.sh` runs as a background command and polls every 5 minutes without the
+  model. It wakes the lead only on a new commit, the job finishing or failing, a usage-limit or
+  sign-in error, or a 40-minute heartbeat that also keeps the prompt cache warm. It prints only
+  what is new since the last wake-up. A Claude sub-agent needs no watcher: it messages the lead.
+- **Name the source.** Each progress line says where a claim comes from ("the builder's log
+  says ...", "commit ...") and marks what the lead has not checked itself.
+- **Independent checks in review.** Rerunning the builder's own tests only shows that its
+  evidence exists and passes. For a change that produces or moves figures the lead (a) reconciles
+  the key totals by a separate computation, every difference explained to the unit, and (b) reads
+  the assertions against the acceptance criteria. For a key rule it (c) breaks the rule in a
+  scratch copy and confirms a test goes red. The lead also reads the builder's whole progress log
+  once and compares it with the final report.
+
+Details: [workflow/daily-workflow.md](workflow/daily-workflow.md) sections 6, 7a and 8, and
+[dev-guardrails/references/verification.md](dev-guardrails/references/verification.md).
+
 The tier labels in [workflow/daily-workflow.md](workflow/daily-workflow.md) section 2 are the
 owner's preference labels, not verified model IDs. Resolve real IDs once in
 `workflow/project-setup.md`.
@@ -78,7 +102,7 @@ The package is a source directory. Do not copy it as one folder into a repositor
 Check package integrity before installing:
 
 ```bash
-python -X utf8 tools/regen_manifest.py . 4.4
+python -X utf8 tools/regen_manifest.py . 4.8.1
 git diff --stat MANIFEST.json
 ```
 
@@ -92,6 +116,8 @@ integrity, not who published the files.
   release-housekeeping.
 - Not exercised: QUICK_FIX 3a, LARGE, QUICK_FIX 3c (hand-off to a fresh low-cost session) and a
   full keep-warm cycle over several hours.
+- The event watcher ran once, on one Codex job (LH-ERP, 19/11/2026), in an earlier form; the
+  final 5-minute / 40-minute form and the lower-tier "ask the lead" rule have not run yet.
 - The 20 scenarios in `validation/agent-scenarios.json` are expected behaviour. No routing
   accuracy, compliance or token saving has been measured against them.
 
