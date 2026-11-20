@@ -60,7 +60,7 @@ prices, supported effort enums, or a promise of model availability.
 | --- | --- | --- |
 | Tier 1 | Opus High; Opus xHigh | Lead, consequential design, deep investigation, difficult final judgment |
 | Tier 2 | Opus Medium; Sonnet Xhigh; Sol 6.2 Extra High | Difficult implementation or a bounded quick investigation |
-| Tier 3 | Sonnet High; Sol 6.2 High; Sol 6.2 Medium; Terra 6.1 xHigh; Deepseek 4.1 Flash High; GLM 5.3 Flash Max | Clear, routine implementation and deterministic check execution |
+| Tier 3 | Sonnet High; Sol 6.2 High; Terra 6.1 xHigh; Deepseek 4.1 Flash High; GLM 5.3 Flash Max | Clear, routine implementation and deterministic check execution |
 
 Do not hardcode labels into API/CLI arguments. Resolve actual model IDs, effort
 support, permitted tools and cost constraints from the installed host once in
@@ -78,6 +78,44 @@ A list price holds only for a short context. Some models charge more once a
 request passes a context threshold, and a long-running agent sits above it on
 almost every request. Pick the model for a role by the context that role will
 reach, not only by difficulty, and record the thresholds in project-setup.md.
+
+### Long-context surcharge for GPT models
+
+Checked on 2026-11-20 against OpenAI's model pages for
+[GPT-6.2 Sol](https://developers.openai.com/api/docs/models/gpt-6.2-sol) and
+[GPT-6.1 Terra](https://developers.openai.com/api/docs/models/gpt-6.1-terra),
+and its [pricing page](https://developers.openai.com/api/docs/pricing). Prices
+change. Read the page again before you rely on a figure.
+
+The rule: when one request has more than 272K input tokens, the WHOLE request is
+priced higher, not only the tokens after 272K. Input and cached-input rates are
+2x. Output is 1.5x.
+
+| Model | Short context, USD per 1M (input / cached / output) | Over 272K input tokens (input / cached / output) |
+| --- | --- | --- |
+| Sol 6.2 | 2 / 0.10 / 10 | 4 / 0.20 / 15 |
+| Terra 6.1 | 1 / 0.05 / 5 | 2 / 0.10 / 7.50 |
+
+- Both models have a 1.05M context window, 922K maximum input and 128K maximum
+  output. The window is larger than the threshold, so a request can pass 272K
+  without any error. Only the bill shows it.
+- This is a cliff, not a slope. A 300K-token request on Sol 6.2 pays the long
+  rate on all 300K input tokens: about 1.20 USD of input, not about 0.60 USD.
+- The same multipliers appear on every listed gpt-5.4 and newer row (5.4, 5.5,
+  5.6, 6, 6.1, 6.2). The pro models have no cached rate: input 2x, output 1.5x.
+  Older rows (gpt-5.2 and earlier, mini and nano) show no long-context price.
+- Batch, Flex and Fast have their own long-context columns with the same
+  multipliers for these two models. Regional processing adds 10% and no
+  long-context regional rate is listed.
+- NOT STATED by OpenAI: whether cached tokens or reasoning tokens count toward
+  the 272K threshold. Assume that cached input counts. Treat this as unverified.
+- NOT CHECKED here: Deepseek 4.1 Flash, GLM 5.3 Flash and any other provider.
+  Their thresholds stay UNKNOWN in project-setup.md until someone reads them.
+
+How to use it: before you give a Sol or Terra role to a builder, estimate the
+largest input that one request will reach. If it can pass 272K, either split the
+task or start a fresh session before that point, or price the role at the long
+column. Do not compare models on the short column alone.
 
 ## 3. One-time project bootstrap
 

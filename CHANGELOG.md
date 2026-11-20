@@ -1,3 +1,13 @@
+# Unreleased - 2026-11-20
+
+Owner-requested addition:
+
+- daily-workflow.md 2: "Long-context surcharge for GPT models". Above 272K input
+  tokens the whole request costs 2x on input and cache and 1.5x on output
+  (Sol 6.2 and Terra 6.1 figures, checked on OpenAI's pages on 2026-11-20). It
+  also records what OpenAI does not state and which providers were not checked.
+- daily-workflow.md 2: Sol 6.2 Medium removed from the Tier 3 labels.
+
 # Version 4.8.1 - 2026-11-19
 
 Owner-requested addition:
